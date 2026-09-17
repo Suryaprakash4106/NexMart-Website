@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexMart — India's Premium Shopping Destination</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div id="cursor" class="cursor"></div>
+  <div id="cursorFollower" class="cursor-follower"></div>
+
+  <!-- LOADING SCREEN -->
+  <div id="loadingScreen" class="loading-screen">
+    <div class="loading-inner">
+      <div class="loading-logo">Nex<span>Mart</span></div>
+      <div class="loading-bar"><div class="loading-fill"></div></div>
+      <div class="loading-text">Loading premium experience...</div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast"></div>
+
+  <!-- TOP STRIP -->
+  <div class="topstrip">
+    <div class="strip-track">
+      <span>🚀 Free Delivery above ₹499</span>
+      <span class="sep">✦</span>
+      <span>📦 7-Day Easy Returns</span>
+      <span class="sep">✦</span>
+      <span>🔒 100% Secure Payments</span>
+      <span class="sep">✦</span>
+      <span>⚡ Same-Day Delivery in Chennai</span>
+      <span class="sep">✦</span>
+      <span>🎁 Use code NEXMART15 for 15% off</span>
+      <span class="sep">✦</span>
+      <span>🚀 Free Delivery above ₹499</span>
+      <span class="sep">✦</span>
+      <span>📦 7-Day Easy Returns</span>
+      <span class="sep">✦</span>
+      <span>🔒 100% Secure Payments</span>
+      <span class="sep">✦</span>
+      <span>⚡ Same-Day Delivery in Chennai</span>
+      <span class="sep">✦</span>
+      <span>🎁 Use code NEXMART15 for 15% off</span>
+      <button id="themeBtn" onclick="toggleTheme()" style="position:fixed;bottom:24px;right:24px;z-index:9999;width:48px;height:48px;border-radius:50%;background:var(--surface);border:2px solid var(--border-bright);font-size:20px;cursor:pointer;box-shadow:var(--shadow-lg);transition:var(--transition)">🌙</button>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header id="mainHeader">
+    <div class="container header-inner">
+      <a href="#" class="brand" onclick="showPage('home')">
+        <div class="brand-icon">N</div>
+        <span>Nex<strong>Mart</strong></span>
+      </a>
+
+      <div class="search-wrap">
+        <div class="search-bar">
+          <select id="searchCategory" class="search-cat">
+            <option value="">All Categories</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Home">Home & Kitchen</option>
+            <option value="Books">Books</option>
+            <option value="Sports">Sports</option>
+            <option value="Beauty">Beauty</option>
+            <option value="Toys">Toys</option>
+            <option value="Grocery">Grocery</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Automotive">Automotive</option>
+            <option value="Health">Health</option>
+            <option value="Stationery">Stationery</option>
+          </select>
+          <input type="text" id="searchInput" placeholder="Search products, brands..." autocomplete="off" />
+          <button class="search-btn" onclick="doSearch()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2.5"/></svg>
+          </button>
+        </div>
+        <div id="searchSuggestions" class="search-suggestions"></div>
+      </div>
+
+      <div class="header-actions">
+        <div class="action-btn" id="userMenuBtn" onclick="toggleUserMenu()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span id="userLabel">Account</span>
+          <div id="userDropdown" class="user-dropdown hidden">
+            <div id="guestMenu">
+              <button onclick="showModal('loginModal')">Sign In</button>
+              <button onclick="showModal('registerModal')">Register</button>
+            </div>
+            <div id="loggedMenu" class="hidden">
+              <div class="user-name-drop" id="dropUsername"></div>
+              <button onclick="showPage('orders')">My Orders</button>
+              <button onclick="showPage('wishlist')">Wishlist</button>
+              <button onclick="showPage('profile')">Profile</button>
+              <button onclick="logout()" class="logout-btn">Sign Out</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="action-btn" onclick="showPage('wishlist')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2"/></svg>
+          <span>Wishlist</span>
+          <span class="badge" id="wishBadge">0</span>
+        </div>
+
+        <div class="action-btn" onclick="openCart()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" stroke="currentColor" stroke-width="2"/><line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/><path d="M16 10a4 4 0 0 1-8 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span>Cart</span>
+          <span class="badge" id="cartBadge">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-bar">
+      <div class="container nav-inner">
+        <button class="nav-link active" onclick="filterCategory('', this)">✦ All</button>
+        <button class="nav-link" onclick="filterCategory('Electronics', this)">📱 Electronics</button>
+        <button class="nav-link" onclick="filterCategory('Fashion', this)">👗 Fashion</button>
+        <button class="nav-link" onclick="filterCategory('Home', this)">🏠 Home & Kitchen</button>
+        <button class="nav-link" onclick="filterCategory('Furniture', this)">🛋 Furniture</button>
+        <button class="nav-link" onclick="filterCategory('Books', this)">📚 Books</button>
+        <button class="nav-link" onclick="filterCategory('Sports', this)">⚽ Sports</button>
+        <button class="nav-link" onclick="filterCategory('Beauty', this)">💄 Beauty</button>
+        <button class="nav-link" onclick="filterCategory('Grocery', this)">🛒 Grocery</button>
+        <button class="nav-link" onclick="filterCategory('Health', this)">💊 Health</button>
+        <button class="nav-link" onclick="filterCategory('Automotive', this)">🚗 Automotive</button>
+        <button class="nav-link" onclick="filterCategory('Toys', this)">🎮 Toys</button>
+        <button class="nav-link" onclick="filterCategory('Stationery', this)">🖊 Stationery</button>
+        <button class="nav-link deal-link" onclick="filterCategory('Deal', this)">🔥 Deals</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME PAGE -->
+    <div id="page-home" class="page active">
+      <div class="container">
+
+        <!-- HERO -->
+        <section class="hero-section">
+          <div class="hero-slider" id="heroSlider">
+            <div class="hero-slide slide1 active">
+              <div class="slide-content">
+                <span class="slide-tag">🔥 Flash Sale Live</span>
+                <h1>Next-Gen<br><span class="highlight">Electronics</span></h1>
+                <p>Laptops, phones, gadgets — up to 65% off</p>
+                <button class="hero-btn" onclick="filterCategory('Electronics', null)">Shop Now →</button>
+              </div>
+              <div class="slide-visual">
+                <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=600&auto=format&fit=crop" alt="Electronics" loading="lazy"/>
+              </div>
+            </div>
+            <div class="hero-slide slide2">
+              <div class="slide-content">
+                <span class="slide-tag">✨ New Season</span>
+                <h1>Fashion<br><span class="highlight">Redefined</span></h1>
+                <p>Trending styles, iconic brands, great prices</p>
+                <button class="hero-btn" onclick="filterCategory('Fashion', null)">Explore →</button>
+              </div>
+              <div class="slide-visual">
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&auto=format&fit=crop" alt="Fashion" loading="lazy"/>
+              </div>
+            </div>
+            <div class="hero-slide slide3">
+              <div class="slide-content">
+                <span class="slide-tag">🏠 Bestsellers</span>
+                <h1>Home &<br><span class="highlight">Kitchen</span></h1>
+                <p>Beautiful décor and smart kitchen essentials</p>
+                <button class="hero-btn" onclick="filterCategory('Home', null)">Discover →</button>
+              </div>
+              <div class="slide-visual">
+                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&auto=format&fit=crop" alt="Home" loading="lazy"/>
+              </div>
+            </div>
+            <div class="hero-slide slide4">
+              <div class="slide-content">
+                <span class="slide-tag">💪 Fitness</span>
+                <h1>Sports &<br><span class="highlight">Outdoors</span></h1>
+                <p>Gear up for your best performance</p>
+                <button class="hero-btn" onclick="filterCategory('Sports', null)">Get Active →</button>
+              </div>
+              <div class="slide-visual">
+                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&auto=format&fit=crop" alt="Sports" loading="lazy"/>
+              </div>
+            </div>
+          </div>
+          <div class="hero-dots" id="heroDots">
+            <span class="dot active" onclick="goSlide(0)"></span>
+            <span class="dot" onclick="goSlide(1)"></span>
+            <span class="dot" onclick="goSlide(2)"></span>
+            <span class="dot" onclick="goSlide(3)"></span>
+          </div>
+          <button class="slider-arrow left" onclick="goSlide((STATE.slideIndex-1+4)%4)">‹</button>
+          <button class="slider-arrow right" onclick="goSlide((STATE.slideIndex+1)%4)">›</button>
+        </section>
+
+        <!-- STATS BAR -->
+        <div class="stats-bar">
+          <div class="stat-item"><span class="stat-n" data-target="10">0</span><span>M+</span><small>Happy Customers</small></div>
+          <div class="stat-item"><span class="stat-n" data-target="500">0</span><span>K+</span><small>Products</small></div>
+          <div class="stat-item"><span class="stat-n" data-target="99">0</span><span>%</span><small>Satisfaction</small></div>
+          <div class="stat-item"><span class="stat-n" data-target="50">0</span><span>+</span><small>Cities Covered</small></div>
+        </div>
+
+        <!-- CATEGORIES -->
+        <section class="quick-cats">
+          <div class="section-header">
+            <h2 class="section-title">Shop by Category</h2>
+            <span class="section-line"></span>
+          </div>
+          <div class="cats-grid">
+            <div class="cat-card" onclick="filterCategory('Electronics', null)"><div class="cat-bg"></div><div class="cat-icon">📱</div><div class="cat-name">Electronics</div><div class="cat-count">120+ items</div></div>
+            <div class="cat-card" onclick="filterCategory('Fashion', null)"><div class="cat-bg"></div><div class="cat-icon">👗</div><div class="cat-name">Fashion</div><div class="cat-count">200+ items</div></div>
+            <div class="cat-card" onclick="filterCategory('Home', null)"><div class="cat-bg"></div><div class="cat-icon">🏠</div><div class="cat-name">Home & Kitchen</div><div class="cat-count">85+ items</div></div>
+            <div class="cat-card" onclick="filterCategory('Furniture', null)"><div class="cat-bg"></div><div class="cat-icon">🛋</div><div class="cat-name">Furniture</div><div class="cat-count">60+ items</div></div>
+            <div class="cat-card" onclick="filterCategory('Books', null)"><div class="cat-bg"></div><div class="cat-icon">📚</div><div class="cat-name">Books</div><div class="cat-count">500+ items</div></div>
+            <div class="cat-card" onclick="filterCategory('Sports', null)"><div class="cat-bg"></div><div class="cat-icon">⚽</div><div class="cat-name">Sports</div><div class="cat-count">90+ items</div></div>
+            <div class="cat-card" onclick="filterCategory('Beauty', null)"><div class="cat-bg"></div><div class="cat-icon">💄</div><div class="cat-name">Beauty</div><div class="cat-count">150+ items</div></div>
+            <div class="cat-card" onclick="filterCategory('Grocery', null)"><div class="cat-bg"></div><div class="cat-icon">🛒</div><div class="cat-name">Grocery</div><div class="cat-count">300+ items</div></div>
+            <div class="cat-card" onclick="filterCategory('Health', null)"><div class="cat-bg"></div><div class="cat-icon">💊</div><div class="cat-name">Health</div><div class="cat-count">75+ items</div></div>
+            <div class="cat-card" onclick="filterCategory('Automotive', null)"><div class="cat-bg"></div><div class="cat-icon">🚗</div><div class="cat-name">Automotive</div><div class="cat-count">40+ items</div></div>
+            <div class="cat-card" onclick="filterCategory('Toys', null)"><div class="cat-bg"></div><div class="cat-icon">🎮</div><div class="cat-name">Toys & Games</div><div class="cat-count">110+ items</div></div>
+            <div class="cat-card" onclick="filterCategory('Stationery', null)"><div class="cat-bg"></div><div class="cat-icon">🖊</div><div class="cat-name">Stationery</div><div class="cat-count">80+ items</div></div>
+          </div>
+        </section>
+
+        <!-- DEALS SECTION -->
+        <section class="deals-section">
+          <div class="section-header deals-header">
+            <div>
+              <h2 class="section-title">🔥 Today's Hot Deals</h2>
+              <span id="dealTimer" class="deal-timer">Loading...</span>
+            </div>
+            <button class="see-all-btn" onclick="filterCategory('Deal', null)">See All Deals →</button>
+          </div>
+          <div class="deals-grid" id="dealsGrid"></div>
+        </section>
+
+        <!-- FEATURED -->
+        <section class="featured-section">
+          <div class="section-header">
+            <h2 class="section-title">⭐ Featured Products</h2>
+            <span class="section-line"></span>
+          </div>
+          <div class="products-grid" id="featuredGrid"></div>
+        </section>
+
+        <!-- PROMO BANNERS -->
+        <section class="promo-banners">
+          <div class="promo-card promo-1" onclick="filterCategory('Electronics', null)">
+            <div class="promo-content">
+              <span class="promo-tag">MEGA SALE</span>
+              <h3>Electronics<br>Up to 65% Off</h3>
+              <button>Shop Now</button>
+            </div>
+          </div>
+          <div class="promo-card promo-2" onclick="filterCategory('Fashion', null)">
+            <div class="promo-content">
+              <span class="promo-tag">NEW ARRIVALS</span>
+              <h3>Fashion Week<br>Has Arrived</h3>
+              <button>Explore</button>
+            </div>
+          </div>
+          <div class="promo-card promo-3" onclick="filterCategory('Grocery', null)">
+            <div class="promo-content">
+              <span class="promo-tag">FRESH DAILY</span>
+              <h3>Grocery &<br>Essentials</h3>
+              <button>Order Now</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ALL PRODUCTS -->
+        <section class="all-products-section">
+          <div class="section-header">
+            <h2 class="section-title" id="allProductsTitle">All Products</h2>
+            <div class="filters-row">
+              <select id="sortSelect" onchange="applySortFilter()" class="sort-select">
+                <option value="default">Sort: Featured</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating">Top Rated</option>
+                <option value="discount">Max Discount</option>
+                <option value="newest">Newest First</option>
+              </select>
+              <button class="filter-toggle-btn" onclick="toggleFilterPanel()">⚙ Filters</button>
+            </div>
+          </div>
+
+          <div class="filter-panel" id="filterPanel">
+            <div class="filter-group">
+              <label>Max Price: ₹<span id="priceVal">100000</span></label>
+              <input type="range" id="priceRange" min="0" max="200000" value="200000" step="500" oninput="applyPriceFilter(this.value)">
+            </div>
+            <div class="filter-group">
+              <label>Min Rating:</label>
+              <div class="rating-btns">
+                <button onclick="setRatingFilter(0, this)" class="rating-btn active">All</button>
+                <button onclick="setRatingFilter(3, this)" class="rating-btn">3★+</button>
+                <button onclick="setRatingFilter(4, this)" class="rating-btn">4★+</button>
+                <button onclick="setRatingFilter(4.5, this)" class="rating-btn">4.5★+</button>
+              </div>
+            </div>
+            <div class="filter-group">
+              <label>Availability:</label>
+              <div class="rating-btns">
+                <button onclick="setStockFilter('all', this)" class="rating-btn active">All</button>
+                <button onclick="setStockFilter('instock', this)" class="rating-btn">In Stock</button>
+                <button onclick="setStockFilter('deals', this)" class="rating-btn">On Sale</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="products-grid" id="mainProductsGrid"></div>
+          <div id="noProducts" class="empty-state hidden">
+            <div class="empty-icon">🔍</div>
+            <h3>No products found</h3>
+            <p>Try adjusting filters or search a different term</p>
+            <button class="btn-primary" onclick="filterCategory('', null)">Browse All</button>
+          </div>
+          <div class="load-more-wrap">
+            <button id="loadMoreBtn" class="load-more-btn" onclick="loadMore()">Load More Products</button>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- SEARCH RESULTS PAGE -->
+    <div id="page-search" class="page">
+      <div class="container">
+        <h2 class="page-title" id="searchResultsTitle">Search Results</h2>
+        <div class="products-grid" id="searchResultsGrid"></div>
+        <div id="noSearchResults" class="empty-state hidden">
+          <div class="empty-icon">😕</div>
+          <h3>No results found</h3>
+          <p>Try different keywords or browse categories</p>
+          <button class="btn-primary" onclick="showPage('home')">Go Home</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT DETAIL PAGE -->
+    <div id="page-detail" class="page">
+      <div class="container" id="productDetailContent"></div>
+    </div>
+
+    <!-- WISHLIST PAGE -->
+    <div id="page-wishlist" class="page">
+      <div class="container">
+        <h2 class="page-title">❤️ My Wishlist</h2>
+        <div class="products-grid" id="wishlistGrid"></div>
+        <div id="wishlistEmpty" class="empty-state hidden">
+          <div class="empty-icon">💔</div>
+          <h3>Your wishlist is empty</h3>
+          <p>Save items you love and buy them later</p>
+          <button class="btn-primary" onclick="showPage('home')">Start Shopping</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORDERS PAGE -->
+    <div id="page-orders" class="page">
+      <div class="container">
+        <h2 class="page-title">📦 My Orders</h2>
+        <div id="ordersContainer"></div>
+        <div id="ordersEmpty" class="empty-state hidden">
+          <div class="empty-icon">📭</div>
+          <h3>No orders yet</h3>
+          <p>Start shopping and your orders will appear here</p>
+          <button class="btn-primary" onclick="showPage('home')">Shop Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFILE PAGE -->
+    <div id="page-profile" class="page">
+      <div class="container" id="profileContent"></div>
+    </div>
+  </main>
+
+  <!-- CART SIDEBAR -->
+  <div id="cartOverlay" class="cart-overlay" onclick="closeCart()"></div>
+  <div id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Shopping Cart <span id="cartCount"></span></h3>
+      <button class="cart-close" onclick="closeCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer" id="cartFooter"></div>
+  </div>
+
+  <!-- LOGIN MODAL -->
+  <div id="loginModal" class="modal-overlay" onclick="closeModalOutside(event, 'loginModal')">
+    <div class="modal-box">
+      <div class="modal-close" onclick="closeModal('loginModal')">✕</div>
+      <div class="modal-brand">Nex<span>Mart</span></div>
+      <h2 class="modal-title">Welcome back 👋</h2>
+      <p class="modal-sub">Sign in to continue your premium shopping</p>
+      <div class="form-group"><label>Email</label><input type="email" id="loginEmail" placeholder="your@email.com" /></div>
+      <div class="form-group"><label>Password</label><input type="password" id="loginPassword" placeholder="Enter password" /></div>
+      <button class="btn-primary full" onclick="login()">Sign In →</button>
+      <p class="modal-switch">Don't have an account? <a onclick="closeModal('loginModal'); showModal('registerModal')">Register</a></p>
+    </div>
+  </div>
+
+  <!-- REGISTER MODAL -->
+  <div id="registerModal" class="modal-overlay" onclick="closeModalOutside(event, 'registerModal')">
+    <div class="modal-box">
+      <div class="modal-close" onclick="closeModal('registerModal')">✕</div>
+      <div class="modal-brand">Nex<span>Mart</span></div>
+      <h2 class="modal-title">Join NexMart ✨</h2>
+      <p class="modal-sub">Create your account and start shopping</p>
+      <div class="form-group"><label>Full Name</label><input type="text" id="regName" placeholder="Your full name" /></div>
+      <div class="form-group"><label>Email</label><input type="email" id="regEmail" placeholder="your@email.com" /></div>
+      <div class="form-group"><label>Phone</label><input type="tel" id="regPhone" placeholder="10-digit mobile number" /></div>
+      <div class="form-group"><label>Password</label><input type="password" id="regPassword" placeholder="Create password" /></div>
+      <button class="btn-primary full" onclick="register()">Create Account →</button>
+      <p class="modal-switch">Already have an account? <a onclick="closeModal('registerModal'); showModal('loginModal')">Sign In</a></p>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL -->
+  <div id="checkoutModal" class="modal-overlay" onclick="closeModalOutside(event, 'checkoutModal')">
+    <div class="modal-box checkout-box">
+      <div class="modal-close" onclick="closeModal('checkoutModal')">✕</div>
+      <div class="checkout-steps">
+        <div class="step active" id="step-ind-1"><span>1</span>Delivery</div>
+        <div class="step" id="step-ind-2"><span>2</span>Payment</div>
+        <div class="step" id="step-ind-3"><span>3</span>Review</div>
+      </div>
+
+      <div id="checkoutStep1">
+        <h3>Delivery Address</h3>
+        <div class="form-row-2">
+          <div class="form-group"><label>First Name</label><input type="text" id="delivFName" placeholder="First name" /></div>
+          <div class="form-group"><label>Last Name</label><input type="text" id="delivLName" placeholder="Last name" /></div>
+        </div>
+        <div class="form-group"><label>Phone</label><input type="tel" id="delivPhone" placeholder="10-digit mobile" /></div>
+        <div class="form-group"><label>Address</label><input type="text" id="delivAddr1" placeholder="House / Flat / Building" /></div>
+        <div class="form-group"><label>Area / Landmark</label><input type="text" id="delivAddr2" placeholder="Street, Landmark (optional)" /></div>
+        <div class="form-row-2">
+          <div class="form-group"><label>City</label><input type="text" id="delivCity" placeholder="City" /></div>
+          <div class="form-group"><label>State</label>
+            <select id="delivState">
+              <option>Tamil Nadu</option><option>Karnataka</option><option>Kerala</option>
+              <option>Andhra Pradesh</option><option>Telangana</option><option>Maharashtra</option>
+              <option>Delhi</option><option>Gujarat</option><option>Rajasthan</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group"><label>PIN Code</label><input type="text" id="delivPin" placeholder="600001" maxlength="6" /></div>
+        <div class="checkout-nav">
+          <button onclick="closeModal('checkoutModal')" class="btn-outline">← Back to Cart</button>
+          <button onclick="checkoutNext(1)" class="btn-primary">Continue →</button>
+        </div>
+      </div>
+
+      <div id="checkoutStep2" class="hidden">
+        <h3>Payment Method</h3>
+        <div class="payment-options">
+          <label class="pay-opt"><input type="radio" name="payment" value="upi" checked /><div class="pay-opt-box"><span>📱</span><div><strong>UPI</strong><small>GPay, PhonePe, BHIM</small></div></div></label>
+          <label class="pay-opt"><input type="radio" name="payment" value="card" /><div class="pay-opt-box"><span>💳</span><div><strong>Credit / Debit Card</strong><small>Visa, Mastercard, RuPay</small></div></div></label>
+          <label class="pay-opt"><input type="radio" name="payment" value="netbanking" /><div class="pay-opt-box"><span>🏦</span><div><strong>Net Banking</strong><small>All major banks</small></div></div></label>
+          <label class="pay-opt"><input type="radio" name="payment" value="wallet" /><div class="pay-opt-box"><span>👛</span><div><strong>Wallet</strong><small>Paytm, Amazon Pay</small></div></div></label>
+          <label class="pay-opt"><input type="radio" name="payment" value="emi" /><div class="pay-opt-box"><span>📅</span><div><strong>No-cost EMI</strong><small>0% EMI available</small></div></div></label>
+          <label class="pay-opt"><input type="radio" name="payment" value="cod" /><div class="pay-opt-box"><span>💵</span><div><strong>Cash on Delivery</strong><small>Pay when delivered</small></div></div></label>
+        </div>
+        <div class="coupon-row">
+          <input type="text" id="couponInput" placeholder="Enter coupon code (NEXMART15)" />
+          <button onclick="applyCoupon()">Apply</button>
+        </div>
+        <div id="couponMsg" class="coupon-msg"></div>
+        <div class="checkout-nav">
+          <button onclick="checkoutBack(2)" class="btn-outline">← Back</button>
+          <button onclick="checkoutNext(2)" class="btn-primary">Review Order →</button>
+        </div>
+      </div>
+
+      <div id="checkoutStep3" class="hidden">
+        <h3>Order Review</h3>
+        <div id="orderReview" class="order-review"></div>
+        <div class="checkout-nav">
+          <button onclick="checkoutBack(3)" class="btn-outline">← Back</button>
+          <button onclick="placeOrder()" class="btn-primary place-order-btn">🎉 Place Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUCCESS MODAL -->
+  <div id="successModal" class="modal-overlay">
+    <div class="modal-box success-box">
+      <div class="success-anim">🎉</div>
+      <h2>Order Placed!</h2>
+      <p class="modal-sub" id="successOrderId"></p>
+      <p>Your order is confirmed. You'll receive updates shortly.</p>
+      <button class="btn-primary full" onclick="closeModal('successModal'); showPage('orders')">Track Order</button>
+      <button class="btn-outline full mt8" onclick="closeModal('successModal'); showPage('home')">Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- QUICK VIEW MODAL -->
+  <div id="quickViewModal" class="modal-overlay" onclick="closeModalOutside(event, 'quickViewModal')">
+    <div class="modal-box quick-view-box" id="quickViewContent"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-wave"></div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-main">
+          <div class="footer-brand">Nex<strong>Mart</strong></div>
+          <p>India's fastest growing premium marketplace. Millions of products, lightning-fast delivery, unbeatable prices.</p>
+          <div class="social-links">
+            <span class="social-btn" title="Facebook">f</span>
+            <span class="social-btn" title="Twitter">𝕏</span>
+            <span class="social-btn" title="Instagram">◎</span>
+            <span class="social-btn" title="YouTube">▶</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Help & Support</h4>
+          <ul>
+            <li>Track My Order</li><li>Return Policy</li>
+            <li>Cancel Order</li><li>Payment Issues</li><li>Contact Us</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li>About Us</li><li>Careers</li>
+            <li>Press</li><li>Blog</li><li>Investors</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Policies</h4>
+          <ul>
+            <li>Privacy Policy</li><li>Terms of Use</li>
+            <li>Cookie Policy</li><li>Seller Policy</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Download App</h4>
+          <div class="app-btn">📱 Google Play</div>
+          <div class="app-btn">🍎 App Store</div>
+          <h4 style="margin-top:16px">Payments</h4>
+          <div class="payment-icons">💳 🏦 📱 💵 🔐</div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="footerYear"></span> NexMart Pvt. Ltd. All rights reserved.</span>
+        <span>Designed by SURYAPRAKASH K</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
