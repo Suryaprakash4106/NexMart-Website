@@ -6,7 +6,7 @@ import Toast from './components/Toast';
 import AuthModal from './components/AuthModal';
 import RequireAuth from './components/RequireAuth';
 import { useShop } from './context/ShopContext';
-import HomePage from './pages/HomePage';
+import LandingPage from './pages/LandingPage';
 import ListingPage from './pages/ListingPage';
 import ProductPage from './pages/ProductPage';
 import CartPage from './pages/CartPage';
@@ -24,16 +24,19 @@ export default function App() {
   const { products, loadError } = useShop();
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
   const guard = (el, admin) => <RequireAuth admin={admin}>{el}</RequireAuth>;
+  const lp = pathname === '/' && products.length > 0 && !loadError;
+  const top = pathname === '/' ? 150 : 20;
 
   return (
     <>
       <Header />
-      <main className="w">
-        {loadError ? <div className="box" style={{ marginTop: 20 }}>{loadError}</div>
-          : !products.length ? <div className="grid" style={{ marginTop: 20 }}>{Array.from({ length: 10 }, (_, i) => <div key={i} className="sk" />)}</div>
+      <main className={lp ? 'lp' : 'w'}>
+        {loadError ? <div className="box" style={{ marginTop: top }}>{loadError}</div>
+          : !products.length ? <div className="grid" style={{ marginTop: top }}>{Array.from({ length: 10 }, (_, i) => <div key={i} className="sk" />)}</div>
           : (
             <Routes>
-              <Route path="/" element={<HomePage />} />
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/shop" element={<ListingPage key={pathname} mode="all" />} />
               <Route path="/c/:cat" element={<ListingPage key={pathname + search} mode="category" />} />
               <Route path="/deals" element={<ListingPage key={pathname} mode="deals" />} />
               <Route path="/search/:q" element={<ListingPage key={pathname + search} mode="search" />} />

@@ -7,12 +7,14 @@ export default function ProductCard({ p }) {
   const nav = useNavigate();
   const { wish, toggleWish, addCart } = useShop();
   const mrp = p.originalPrice > p.price;
+  const alt = (p.images || []).find((u) => u && u !== p.image);
   return (
     <div className="card" onClick={() => nav('/p/' + p.id)}>
       <div className="pimg">
         {p.deal && off(p) >= 15 && <span className="tag">Offer</span>}
         <button className={'hb' + (wish.includes(p.id) ? ' on' : '')} aria-label="Wishlist" onClick={(e) => { e.stopPropagation(); toggleWish(p.id); }}><Heart /></button>
-        <img src={p.image} alt={p.name} loading="lazy" onError={imgFallback} />
+        <img className="i1" src={p.image} alt={p.name} loading="lazy" onError={imgFallback} />
+        {alt && <img className="i2" src={alt} alt="" loading="lazy" onError={(e) => { e.currentTarget.style.display = 'none'; }} />}
       </div>
       <div className="cb">
         <span className="br">{p.brand}</span>

@@ -24,7 +24,8 @@ export default function ListingPage({ mode }) {
     subs = count(all, 'subcategory');
     base = sub ? all.filter((p) => p.subcategory === sub) : all;
     title = (CATS[cat] || cat) + (sub ? ' › ' + sub : '');
-  } else if (mode === 'deals') { title = 'Hot deals'; base = products.filter((p) => p.deal); }
+  } else if (mode === 'all') { title = 'All products'; base = products; }
+  else if (mode === 'deals') { title = 'Hot deals'; base = products.filter((p) => p.deal); }
   else {
     const term = (q || '').toLowerCase(), c = sp.get('cat');
     title = '"' + q + '"';
@@ -42,6 +43,7 @@ export default function ListingPage({ mode }) {
   return (
     <>
       <div className="crumb"><Link to="/">Home</Link> › {mode === 'category' ? <Link to={'/c/' + cat}>{CATS[cat] || cat}</Link> : title}{sub && <> › {sub}</>}</div>
+      <h1 className="pg-t">{title}</h1>
       <div className="lay">
         <aside className="side">
           {mode === 'category' ? (
