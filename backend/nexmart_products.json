@@ -1,0 +1,1602 @@
+[
+  {
+    "name": "OnePlus Nord CE 4 5G",
+    "category": "Electronics",
+    "brand": "OnePlus",
+    "price": 24999,
+    "stock": 45,
+    "description": "6.7-inch AMOLED 120Hz display, Snapdragon 7 Gen 3 chip and 100W fast charging.",
+    "images": [
+      "https://loremflickr.com/800/800/smartphone?lock=3",
+      "https://loremflickr.com/800/800/smartphone?lock=4",
+      "https://loremflickr.com/800/800/smartphone?lock=5"
+    ],
+    "image": "https://loremflickr.com/800/800/smartphone?lock=3",
+    "rating": 4.5,
+    "numReviews": 33
+  },
+  {
+    "name": "Redmi Note 13 Pro",
+    "category": "Electronics",
+    "brand": "Xiaomi",
+    "price": 23999,
+    "stock": 60,
+    "description": "200MP camera, 6.67-inch AMOLED screen and 5100mAh battery.",
+    "images": [
+      "https://loremflickr.com/800/800/phone?lock=6",
+      "https://loremflickr.com/800/800/phone?lock=7",
+      "https://loremflickr.com/800/800/phone?lock=8"
+    ],
+    "image": "https://loremflickr.com/800/800/phone?lock=6",
+    "rating": 4.0,
+    "numReviews": 46
+  },
+  {
+    "name": "boAt Rockerz 450 Headphones",
+    "category": "Electronics",
+    "brand": "boAt",
+    "price": 1499,
+    "stock": 120,
+    "description": "Bluetooth on-ear headphones with 15-hour playback and padded ear cushions.",
+    "images": [
+      "https://loremflickr.com/800/800/headphones?lock=9",
+      "https://loremflickr.com/800/800/headphones?lock=10",
+      "https://loremflickr.com/800/800/headphones?lock=11"
+    ],
+    "image": "https://loremflickr.com/800/800/headphones?lock=9",
+    "rating": 4.7,
+    "numReviews": 59
+  },
+  {
+    "name": "JBL Flip 6 Bluetooth Speaker",
+    "category": "Electronics",
+    "brand": "JBL",
+    "price": 8999,
+    "stock": 40,
+    "description": "Portable waterproof speaker with powerful bass and 12-hour battery.",
+    "images": [
+      "https://loremflickr.com/800/800/bluetooth,speaker?lock=12",
+      "https://loremflickr.com/800/800/bluetooth,speaker?lock=13",
+      "https://loremflickr.com/800/800/bluetooth,speaker?lock=14"
+    ],
+    "image": "https://loremflickr.com/800/800/bluetooth,speaker?lock=12",
+    "rating": 4.2,
+    "numReviews": 72
+  },
+  {
+    "name": "Noise ColorFit Pro 5 Smartwatch",
+    "category": "Electronics",
+    "brand": "Noise",
+    "price": 3999,
+    "stock": 70,
+    "description": "1.85-inch AMOLED smartwatch with BT calling, SpO2 and 100+ sports modes.",
+    "images": [
+      "https://loremflickr.com/800/800/smartwatch?lock=15",
+      "https://loremflickr.com/800/800/smartwatch?lock=16",
+      "https://loremflickr.com/800/800/smartwatch?lock=17"
+    ],
+    "image": "https://loremflickr.com/800/800/smartwatch?lock=15",
+    "rating": 4.9,
+    "numReviews": 85
+  },
+  {
+    "name": "Sony WH-1000XM5 Headphones",
+    "category": "Electronics",
+    "brand": "Sony",
+    "price": 29990,
+    "stock": 25,
+    "description": "Industry-leading noise cancelling wireless headphones with 30-hour battery.",
+    "images": [
+      "https://loremflickr.com/800/800/headphones,sony?lock=18",
+      "https://loremflickr.com/800/800/headphones,sony?lock=19",
+      "https://loremflickr.com/800/800/headphones,sony?lock=20"
+    ],
+    "image": "https://loremflickr.com/800/800/headphones,sony?lock=18",
+    "rating": 4.4,
+    "numReviews": 98
+  },
+  {
+    "name": "Canon EOS 1500D DSLR Camera",
+    "category": "Electronics",
+    "brand": "Canon",
+    "price": 36999,
+    "stock": 15,
+    "description": "24.1MP DSLR with 18-55mm lens, Wi-Fi and Full HD video.",
+    "images": [
+      "https://loremflickr.com/800/800/dslr,camera?lock=21",
+      "https://loremflickr.com/800/800/dslr,camera?lock=22",
+      "https://loremflickr.com/800/800/dslr,camera?lock=23"
+    ],
+    "image": "https://loremflickr.com/800/800/dslr,camera?lock=21",
+    "rating": 3.9,
+    "numReviews": 111
+  },
+  {
+    "name": "Logitech MX Master 3S Mouse",
+    "category": "Electronics",
+    "brand": "Logitech",
+    "price": 9495,
+    "stock": 50,
+    "description": "Ergonomic wireless mouse with silent clicks and 8K DPI sensor.",
+    "images": [
+      "https://loremflickr.com/800/800/computer,mouse?lock=24",
+      "https://loremflickr.com/800/800/computer,mouse?lock=25",
+      "https://loremflickr.com/800/800/computer,mouse?lock=26"
+    ],
+    "image": "https://loremflickr.com/800/800/computer,mouse?lock=24",
+    "rating": 4.6,
+    "numReviews": 124
+  },
+  {
+    "name": "HP 24-inch Full HD Monitor",
+    "category": "Electronics",
+    "brand": "HP",
+    "price": 10499,
+    "stock": 35,
+    "description": "IPS monitor with 75Hz refresh rate, thin bezels and eye-care mode.",
+    "images": [
+      "https://loremflickr.com/800/800/monitor?lock=27",
+      "https://loremflickr.com/800/800/monitor?lock=28",
+      "https://loremflickr.com/800/800/monitor?lock=29"
+    ],
+    "image": "https://loremflickr.com/800/800/monitor?lock=27",
+    "rating": 4.1,
+    "numReviews": 137
+  },
+  {
+    "name": "TP-Link Archer AX23 Wi-Fi 6 Router",
+    "category": "Electronics",
+    "brand": "TP-Link",
+    "price": 3499,
+    "stock": 80,
+    "description": "Dual-band AX1800 router with OFDMA and 4 high-gain antennas.",
+    "images": [
+      "https://loremflickr.com/800/800/wifi,router?lock=30",
+      "https://loremflickr.com/800/800/wifi,router?lock=31",
+      "https://loremflickr.com/800/800/wifi,router?lock=32"
+    ],
+    "image": "https://loremflickr.com/800/800/wifi,router?lock=30",
+    "rating": 4.8,
+    "numReviews": 150
+  },
+  {
+    "name": "Samsung 980 1TB NVMe SSD",
+    "category": "Electronics",
+    "brand": "Samsung",
+    "price": 7999,
+    "stock": 55,
+    "description": "High-speed PCIe 3.0 NVMe SSD with up to 3500MB/s read speed.",
+    "images": [
+      "https://loremflickr.com/800/800/ssd,hardware?lock=33",
+      "https://loremflickr.com/800/800/ssd,hardware?lock=34",
+      "https://loremflickr.com/800/800/ssd,hardware?lock=35"
+    ],
+    "image": "https://loremflickr.com/800/800/ssd,hardware?lock=33",
+    "rating": 4.3,
+    "numReviews": 163
+  },
+  {
+    "name": "Amazon Fire TV Stick 4K",
+    "category": "Electronics",
+    "brand": "Amazon",
+    "price": 5499,
+    "stock": 90,
+    "description": "Stream 4K Ultra HD content with Alexa voice remote.",
+    "images": [
+      "https://loremflickr.com/800/800/tv,remote?lock=36",
+      "https://loremflickr.com/800/800/tv,remote?lock=37",
+      "https://loremflickr.com/800/800/tv,remote?lock=38"
+    ],
+    "image": "https://loremflickr.com/800/800/tv,remote?lock=36",
+    "rating": 3.8,
+    "numReviews": 176
+  },
+  {
+    "name": "Levi's Men's Slim Fit Jeans",
+    "category": "Fashion",
+    "brand": "Levi's",
+    "price": 2999,
+    "stock": 80,
+    "description": "Classic 511 slim fit stretch denim jeans in dark blue wash.",
+    "images": [
+      "https://loremflickr.com/800/800/jeans?lock=39",
+      "https://loremflickr.com/800/800/jeans?lock=40",
+      "https://loremflickr.com/800/800/jeans?lock=41"
+    ],
+    "image": "https://loremflickr.com/800/800/jeans?lock=39",
+    "rating": 4.5,
+    "numReviews": 189
+  },
+  {
+    "name": "Allen Solly Formal White Shirt",
+    "category": "Fashion",
+    "brand": "Allen Solly",
+    "price": 1799,
+    "stock": 95,
+    "description": "Regular fit cotton formal shirt, wrinkle resistant for office wear.",
+    "images": [
+      "https://loremflickr.com/800/800/white,shirt?lock=42",
+      "https://loremflickr.com/800/800/white,shirt?lock=43",
+      "https://loremflickr.com/800/800/white,shirt?lock=44"
+    ],
+    "image": "https://loremflickr.com/800/800/white,shirt?lock=42",
+    "rating": 4.0,
+    "numReviews": 202
+  },
+  {
+    "name": "Adidas Running Shoes Ultraboost",
+    "category": "Fashion",
+    "brand": "Adidas",
+    "price": 14999,
+    "stock": 30,
+    "description": "Responsive Boost cushioning with Primeknit upper for daily runs.",
+    "images": [
+      "https://loremflickr.com/800/800/running,shoes?lock=45",
+      "https://loremflickr.com/800/800/running,shoes?lock=46",
+      "https://loremflickr.com/800/800/running,shoes?lock=47"
+    ],
+    "image": "https://loremflickr.com/800/800/running,shoes?lock=45",
+    "rating": 4.7,
+    "numReviews": 215
+  },
+  {
+    "name": "Fastrack Analog Men's Watch",
+    "category": "Fashion",
+    "brand": "Fastrack",
+    "price": 1995,
+    "stock": 60,
+    "description": "Black dial analog watch with stainless steel strap and date display.",
+    "images": [
+      "https://loremflickr.com/800/800/wristwatch?lock=48",
+      "https://loremflickr.com/800/800/wristwatch?lock=49",
+      "https://loremflickr.com/800/800/wristwatch?lock=50"
+    ],
+    "image": "https://loremflickr.com/800/800/wristwatch?lock=48",
+    "rating": 4.2,
+    "numReviews": 228
+  },
+  {
+    "name": "Ray-Ban Aviator Sunglasses",
+    "category": "Fashion",
+    "brand": "Ray-Ban",
+    "price": 7490,
+    "stock": 40,
+    "description": "Iconic gold-frame aviator with green G-15 UV protected lenses.",
+    "images": [
+      "https://loremflickr.com/800/800/aviator,sunglasses?lock=51",
+      "https://loremflickr.com/800/800/aviator,sunglasses?lock=52",
+      "https://loremflickr.com/800/800/aviator,sunglasses?lock=53"
+    ],
+    "image": "https://loremflickr.com/800/800/aviator,sunglasses?lock=51",
+    "rating": 4.9,
+    "numReviews": 241
+  },
+  {
+    "name": "Biba Women's Cotton Kurti",
+    "category": "Fashion",
+    "brand": "Biba",
+    "price": 1599,
+    "stock": 70,
+    "description": "Printed straight-fit cotton kurti, comfortable for daily wear.",
+    "images": [
+      "https://loremflickr.com/800/800/kurti,indian,dress?lock=54",
+      "https://loremflickr.com/800/800/kurti,indian,dress?lock=55",
+      "https://loremflickr.com/800/800/kurti,indian,dress?lock=56"
+    ],
+    "image": "https://loremflickr.com/800/800/kurti,indian,dress?lock=54",
+    "rating": 4.4,
+    "numReviews": 254
+  },
+  {
+    "name": "Fabindia Silk Saree",
+    "category": "Fashion",
+    "brand": "Fabindia",
+    "price": 6499,
+    "stock": 25,
+    "description": "Handwoven silk saree with traditional zari border.",
+    "images": [
+      "https://loremflickr.com/800/800/saree?lock=57",
+      "https://loremflickr.com/800/800/saree?lock=58",
+      "https://loremflickr.com/800/800/saree?lock=59"
+    ],
+    "image": "https://loremflickr.com/800/800/saree?lock=57",
+    "rating": 3.9,
+    "numReviews": 267
+  },
+  {
+    "name": "Wildcraft Laptop Backpack 35L",
+    "category": "Fashion",
+    "brand": "Wildcraft",
+    "price": 2299,
+    "stock": 65,
+    "description": "Water-resistant backpack with padded laptop compartment.",
+    "images": [
+      "https://loremflickr.com/800/800/backpack?lock=60",
+      "https://loremflickr.com/800/800/backpack?lock=61",
+      "https://loremflickr.com/800/800/backpack?lock=62"
+    ],
+    "image": "https://loremflickr.com/800/800/backpack?lock=60",
+    "rating": 4.6,
+    "numReviews": 280
+  },
+  {
+    "name": "Peter England Leather Belt",
+    "category": "Fashion",
+    "brand": "Peter England",
+    "price": 899,
+    "stock": 100,
+    "description": "Genuine leather reversible belt in black and brown.",
+    "images": [
+      "https://loremflickr.com/800/800/leather,belt?lock=63",
+      "https://loremflickr.com/800/800/leather,belt?lock=64",
+      "https://loremflickr.com/800/800/leather,belt?lock=65"
+    ],
+    "image": "https://loremflickr.com/800/800/leather,belt?lock=63",
+    "rating": 4.1,
+    "numReviews": 293
+  },
+  {
+    "name": "Puma Men's Round Neck T-Shirt",
+    "category": "Fashion",
+    "brand": "Puma",
+    "price": 1299,
+    "stock": 110,
+    "description": "Dry-fit sports t-shirt with breathable fabric and logo print.",
+    "images": [
+      "https://loremflickr.com/800/800/tshirt?lock=66",
+      "https://loremflickr.com/800/800/tshirt?lock=67",
+      "https://loremflickr.com/800/800/tshirt?lock=68"
+    ],
+    "image": "https://loremflickr.com/800/800/tshirt?lock=66",
+    "rating": 4.8,
+    "numReviews": 306
+  },
+  {
+    "name": "Prestige Induction Cooktop",
+    "category": "Home",
+    "brand": "Prestige",
+    "price": 2799,
+    "stock": 50,
+    "description": "2000W induction cooktop with preset Indian menu and auto switch-off.",
+    "images": [
+      "https://loremflickr.com/800/800/induction,cooker?lock=69",
+      "https://loremflickr.com/800/800/induction,cooker?lock=70",
+      "https://loremflickr.com/800/800/induction,cooker?lock=71"
+    ],
+    "image": "https://loremflickr.com/800/800/induction,cooker?lock=69",
+    "rating": 4.3,
+    "numReviews": 319
+  },
+  {
+    "name": "Pigeon Non-Stick Tawa",
+    "category": "Home",
+    "brand": "Pigeon",
+    "price": 649,
+    "stock": 120,
+    "description": "Durable non-stick dosa tawa with induction base.",
+    "images": [
+      "https://loremflickr.com/800/800/tawa,cookware?lock=72",
+      "https://loremflickr.com/800/800/tawa,cookware?lock=73",
+      "https://loremflickr.com/800/800/tawa,cookware?lock=74"
+    ],
+    "image": "https://loremflickr.com/800/800/tawa,cookware?lock=72",
+    "rating": 3.8,
+    "numReviews": 332
+  },
+  {
+    "name": "Milton Thermosteel Flask 1L",
+    "category": "Home",
+    "brand": "Milton",
+    "price": 899,
+    "stock": 90,
+    "description": "Double-wall vacuum insulated flask keeps drinks hot or cold for 24 hours.",
+    "images": [
+      "https://loremflickr.com/800/800/thermos,flask?lock=75",
+      "https://loremflickr.com/800/800/thermos,flask?lock=76",
+      "https://loremflickr.com/800/800/thermos,flask?lock=77"
+    ],
+    "image": "https://loremflickr.com/800/800/thermos,flask?lock=75",
+    "rating": 4.5,
+    "numReviews": 345
+  },
+  {
+    "name": "Cello Plastic Storage Container Set",
+    "category": "Home",
+    "brand": "Cello",
+    "price": 749,
+    "stock": 85,
+    "description": "Set of 6 airtight kitchen containers, BPA free.",
+    "images": [
+      "https://loremflickr.com/800/800/kitchen,container?lock=78",
+      "https://loremflickr.com/800/800/kitchen,container?lock=79",
+      "https://loremflickr.com/800/800/kitchen,container?lock=80"
+    ],
+    "image": "https://loremflickr.com/800/800/kitchen,container?lock=78",
+    "rating": 4.0,
+    "numReviews": 358
+  },
+  {
+    "name": "Philips LED Bulb 12W (Pack of 4)",
+    "category": "Home",
+    "brand": "Philips",
+    "price": 499,
+    "stock": 200,
+    "description": "Energy saving cool daylight LED bulbs with 2-year warranty.",
+    "images": [
+      "https://loremflickr.com/800/800/led,bulb?lock=81",
+      "https://loremflickr.com/800/800/led,bulb?lock=82",
+      "https://loremflickr.com/800/800/led,bulb?lock=83"
+    ],
+    "image": "https://loremflickr.com/800/800/led,bulb?lock=81",
+    "rating": 4.7,
+    "numReviews": 371
+  },
+  {
+    "name": "Bajaj Pedestal Fan 400mm",
+    "category": "Home",
+    "brand": "Bajaj",
+    "price": 2399,
+    "stock": 45,
+    "description": "High-speed pedestal fan with 3 speeds and adjustable height.",
+    "images": [
+      "https://loremflickr.com/800/800/fan?lock=84",
+      "https://loremflickr.com/800/800/fan?lock=85",
+      "https://loremflickr.com/800/800/fan?lock=86"
+    ],
+    "image": "https://loremflickr.com/800/800/fan?lock=84",
+    "rating": 4.2,
+    "numReviews": 384
+  },
+  {
+    "name": "Solimo Microfiber Bedsheet King Size",
+    "category": "Home",
+    "brand": "Solimo",
+    "price": 899,
+    "stock": 75,
+    "description": "Soft double bedsheet with 2 pillow covers, floral print.",
+    "images": [
+      "https://loremflickr.com/800/800/bedsheet,bedroom?lock=87",
+      "https://loremflickr.com/800/800/bedsheet,bedroom?lock=88",
+      "https://loremflickr.com/800/800/bedsheet,bedroom?lock=89"
+    ],
+    "image": "https://loremflickr.com/800/800/bedsheet,bedroom?lock=87",
+    "rating": 4.9,
+    "numReviews": 397
+  },
+  {
+    "name": "Wall Clock Wooden Round",
+    "category": "Home",
+    "brand": "Ajanta",
+    "price": 799,
+    "stock": 60,
+    "description": "Silent sweep movement analog wall clock for living room.",
+    "images": [
+      "https://loremflickr.com/800/800/wall,clock?lock=90",
+      "https://loremflickr.com/800/800/wall,clock?lock=91",
+      "https://loremflickr.com/800/800/wall,clock?lock=92"
+    ],
+    "image": "https://loremflickr.com/800/800/wall,clock?lock=90",
+    "rating": 4.4,
+    "numReviews": 410
+  },
+  {
+    "name": "Bamboo Cutlery Organizer",
+    "category": "Home",
+    "brand": "Kuber",
+    "price": 549,
+    "stock": 70,
+    "description": "Expandable drawer organizer for spoons, forks and knives.",
+    "images": [
+      "https://loremflickr.com/800/800/cutlery,drawer?lock=93",
+      "https://loremflickr.com/800/800/cutlery,drawer?lock=94",
+      "https://loremflickr.com/800/800/cutlery,drawer?lock=95"
+    ],
+    "image": "https://loremflickr.com/800/800/cutlery,drawer?lock=93",
+    "rating": 3.9,
+    "numReviews": 423
+  },
+  {
+    "name": "Door Mat Anti-Slip Coir",
+    "category": "Home",
+    "brand": "HomeStrap",
+    "price": 399,
+    "stock": 150,
+    "description": "Heavy duty natural coir doormat with rubber backing.",
+    "images": [
+      "https://loremflickr.com/800/800/doormat?lock=96",
+      "https://loremflickr.com/800/800/doormat?lock=97",
+      "https://loremflickr.com/800/800/doormat?lock=98"
+    ],
+    "image": "https://loremflickr.com/800/800/doormat?lock=96",
+    "rating": 4.6,
+    "numReviews": 436
+  },
+  {
+    "name": "Wakefit Orthopedic Memory Foam Mattress",
+    "category": "Furniture",
+    "brand": "Wakefit",
+    "price": 12999,
+    "stock": 30,
+    "description": "Queen size 6-inch memory foam mattress with 10-year warranty.",
+    "images": [
+      "https://loremflickr.com/800/800/mattress?lock=99",
+      "https://loremflickr.com/800/800/mattress?lock=100",
+      "https://loremflickr.com/800/800/mattress?lock=101"
+    ],
+    "image": "https://loremflickr.com/800/800/mattress?lock=99",
+    "rating": 4.1,
+    "numReviews": 449
+  },
+  {
+    "name": "Nilkamal Plastic Armchair",
+    "category": "Furniture",
+    "brand": "Nilkamal",
+    "price": 1499,
+    "stock": 80,
+    "description": "Sturdy stackable armchair for indoor and outdoor use.",
+    "images": [
+      "https://loremflickr.com/800/800/armchair?lock=102",
+      "https://loremflickr.com/800/800/armchair?lock=103",
+      "https://loremflickr.com/800/800/armchair?lock=104"
+    ],
+    "image": "https://loremflickr.com/800/800/armchair?lock=102",
+    "rating": 4.8,
+    "numReviews": 462
+  },
+  {
+    "name": "Godrej Interio 3-Door Wardrobe",
+    "category": "Furniture",
+    "brand": "Godrej",
+    "price": 18999,
+    "stock": 12,
+    "description": "Steel wardrobe with lockable compartments and mirror door.",
+    "images": [
+      "https://loremflickr.com/800/800/wardrobe?lock=105",
+      "https://loremflickr.com/800/800/wardrobe?lock=106",
+      "https://loremflickr.com/800/800/wardrobe?lock=107"
+    ],
+    "image": "https://loremflickr.com/800/800/wardrobe?lock=105",
+    "rating": 4.3,
+    "numReviews": 475
+  },
+  {
+    "name": "Sleepyhead Recliner Chair",
+    "category": "Furniture",
+    "brand": "Sleepyhead",
+    "price": 16499,
+    "stock": 10,
+    "description": "Cushioned single-seater recliner with footrest.",
+    "images": [
+      "https://loremflickr.com/800/800/recliner?lock=108",
+      "https://loremflickr.com/800/800/recliner?lock=109",
+      "https://loremflickr.com/800/800/recliner?lock=110"
+    ],
+    "image": "https://loremflickr.com/800/800/recliner?lock=108",
+    "rating": 3.8,
+    "numReviews": 488
+  },
+  {
+    "name": "Durian Study Table with Shelf",
+    "category": "Furniture",
+    "brand": "Durian",
+    "price": 7999,
+    "stock": 20,
+    "description": "Engineered wood study desk with open bookshelf.",
+    "images": [
+      "https://loremflickr.com/800/800/study,desk?lock=111",
+      "https://loremflickr.com/800/800/study,desk?lock=112",
+      "https://loremflickr.com/800/800/study,desk?lock=113"
+    ],
+    "image": "https://loremflickr.com/800/800/study,desk?lock=111",
+    "rating": 4.5,
+    "numReviews": 21
+  },
+  {
+    "name": "Hometown Dining Table 4 Seater",
+    "category": "Furniture",
+    "brand": "HomeTown",
+    "price": 14999,
+    "stock": 15,
+    "description": "Solid wood dining set with 4 cushioned chairs.",
+    "images": [
+      "https://loremflickr.com/800/800/dining,table?lock=114",
+      "https://loremflickr.com/800/800/dining,table?lock=115",
+      "https://loremflickr.com/800/800/dining,table?lock=116"
+    ],
+    "image": "https://loremflickr.com/800/800/dining,table?lock=114",
+    "rating": 4.0,
+    "numReviews": 34
+  },
+  {
+    "name": "Urban Ladder Floating Wall Shelf",
+    "category": "Furniture",
+    "brand": "Urban Ladder",
+    "price": 1299,
+    "stock": 60,
+    "description": "Set of 3 wall-mounted shelves in walnut finish.",
+    "images": [
+      "https://loremflickr.com/800/800/wall,shelf?lock=117",
+      "https://loremflickr.com/800/800/wall,shelf?lock=118",
+      "https://loremflickr.com/800/800/wall,shelf?lock=119"
+    ],
+    "image": "https://loremflickr.com/800/800/wall,shelf?lock=117",
+    "rating": 4.7,
+    "numReviews": 47
+  },
+  {
+    "name": "Featherlite Mesh Office Chair",
+    "category": "Furniture",
+    "brand": "Featherlite",
+    "price": 5499,
+    "stock": 35,
+    "description": "Ergonomic chair with lumbar support and adjustable height.",
+    "images": [
+      "https://loremflickr.com/800/800/office,chair?lock=120",
+      "https://loremflickr.com/800/800/office,chair?lock=121",
+      "https://loremflickr.com/800/800/office,chair?lock=122"
+    ],
+    "image": "https://loremflickr.com/800/800/office,chair?lock=120",
+    "rating": 4.2,
+    "numReviews": 60
+  },
+  {
+    "name": "Shoe Rack 4 Tier Wooden",
+    "category": "Furniture",
+    "brand": "Mintwud",
+    "price": 2799,
+    "stock": 40,
+    "description": "Compact shoe cabinet with open tiers for 12 pairs.",
+    "images": [
+      "https://loremflickr.com/800/800/shoe,rack?lock=123",
+      "https://loremflickr.com/800/800/shoe,rack?lock=124",
+      "https://loremflickr.com/800/800/shoe,rack?lock=125"
+    ],
+    "image": "https://loremflickr.com/800/800/shoe,rack?lock=123",
+    "rating": 4.9,
+    "numReviews": 73
+  },
+  {
+    "name": "Bean Bag XXL with Beans",
+    "category": "Furniture",
+    "brand": "Style Homez",
+    "price": 1699,
+    "stock": 55,
+    "description": "Faux leather bean bag filled with premium beans.",
+    "images": [
+      "https://loremflickr.com/800/800/beanbag?lock=126",
+      "https://loremflickr.com/800/800/beanbag?lock=127",
+      "https://loremflickr.com/800/800/beanbag?lock=128"
+    ],
+    "image": "https://loremflickr.com/800/800/beanbag?lock=126",
+    "rating": 4.4,
+    "numReviews": 86
+  },
+  {
+    "name": "Ikigai",
+    "category": "Books",
+    "brand": "Héctor García",
+    "price": 299,
+    "stock": 150,
+    "description": "The Japanese secret to a long and happy life.",
+    "images": [
+      "https://loremflickr.com/800/800/book,japan?lock=129",
+      "https://loremflickr.com/800/800/book,japan?lock=130",
+      "https://loremflickr.com/800/800/book,japan?lock=131"
+    ],
+    "image": "https://loremflickr.com/800/800/book,japan?lock=129",
+    "rating": 3.9,
+    "numReviews": 99
+  },
+  {
+    "name": "The Alchemist",
+    "category": "Books",
+    "brand": "Paulo Coelho",
+    "price": 249,
+    "stock": 180,
+    "description": "A shepherd's journey to find his personal legend.",
+    "images": [
+      "https://loremflickr.com/800/800/book,desert?lock=132",
+      "https://loremflickr.com/800/800/book,desert?lock=133",
+      "https://loremflickr.com/800/800/book,desert?lock=134"
+    ],
+    "image": "https://loremflickr.com/800/800/book,desert?lock=132",
+    "rating": 4.6,
+    "numReviews": 112
+  },
+  {
+    "name": "Think and Grow Rich",
+    "category": "Books",
+    "brand": "Napoleon Hill",
+    "price": 199,
+    "stock": 200,
+    "description": "Classic guide to wealth building principles.",
+    "images": [
+      "https://loremflickr.com/800/800/book,money?lock=135",
+      "https://loremflickr.com/800/800/book,money?lock=136",
+      "https://loremflickr.com/800/800/book,money?lock=137"
+    ],
+    "image": "https://loremflickr.com/800/800/book,money?lock=135",
+    "rating": 4.1,
+    "numReviews": 125
+  },
+  {
+    "name": "Wings of Fire",
+    "category": "Books",
+    "brand": "A.P.J. Abdul Kalam",
+    "price": 229,
+    "stock": 160,
+    "description": "Autobiography of India's Missile Man.",
+    "images": [
+      "https://loremflickr.com/800/800/book,rocket?lock=138",
+      "https://loremflickr.com/800/800/book,rocket?lock=139",
+      "https://loremflickr.com/800/800/book,rocket?lock=140"
+    ],
+    "image": "https://loremflickr.com/800/800/book,rocket?lock=138",
+    "rating": 4.8,
+    "numReviews": 138
+  },
+  {
+    "name": "Clean Code",
+    "category": "Books",
+    "brand": "Robert C. Martin",
+    "price": 1299,
+    "stock": 70,
+    "description": "A handbook of agile software craftsmanship.",
+    "images": [
+      "https://loremflickr.com/800/800/programming,book?lock=141",
+      "https://loremflickr.com/800/800/programming,book?lock=142",
+      "https://loremflickr.com/800/800/programming,book?lock=143"
+    ],
+    "image": "https://loremflickr.com/800/800/programming,book?lock=141",
+    "rating": 4.3,
+    "numReviews": 151
+  },
+  {
+    "name": "You Don't Know JS Yet",
+    "category": "Books",
+    "brand": "Kyle Simpson",
+    "price": 899,
+    "stock": 60,
+    "description": "Deep dive into the core mechanisms of JavaScript.",
+    "images": [
+      "https://loremflickr.com/800/800/javascript,code?lock=144",
+      "https://loremflickr.com/800/800/javascript,code?lock=145",
+      "https://loremflickr.com/800/800/javascript,code?lock=146"
+    ],
+    "image": "https://loremflickr.com/800/800/javascript,code?lock=144",
+    "rating": 3.8,
+    "numReviews": 164
+  },
+  {
+    "name": "Sapiens",
+    "category": "Books",
+    "brand": "Yuval Noah Harari",
+    "price": 499,
+    "stock": 110,
+    "description": "A brief history of humankind.",
+    "images": [
+      "https://loremflickr.com/800/800/book,history?lock=147",
+      "https://loremflickr.com/800/800/book,history?lock=148",
+      "https://loremflickr.com/800/800/book,history?lock=149"
+    ],
+    "image": "https://loremflickr.com/800/800/book,history?lock=147",
+    "rating": 4.5,
+    "numReviews": 177
+  },
+  {
+    "name": "The Subtle Art of Not Giving a F*ck",
+    "category": "Books",
+    "brand": "Mark Manson",
+    "price": 329,
+    "stock": 130,
+    "description": "A counterintuitive approach to living a good life.",
+    "images": [
+      "https://loremflickr.com/800/800/book,reading?lock=150",
+      "https://loremflickr.com/800/800/book,reading?lock=151",
+      "https://loremflickr.com/800/800/book,reading?lock=152"
+    ],
+    "image": "https://loremflickr.com/800/800/book,reading?lock=150",
+    "rating": 4.0,
+    "numReviews": 190
+  },
+  {
+    "name": "Ponniyin Selvan (Tamil)",
+    "category": "Books",
+    "brand": "Kalki",
+    "price": 699,
+    "stock": 90,
+    "description": "Epic Tamil historical novel in a single volume.",
+    "images": [
+      "https://loremflickr.com/800/800/tamil,book?lock=153",
+      "https://loremflickr.com/800/800/tamil,book?lock=154",
+      "https://loremflickr.com/800/800/tamil,book?lock=155"
+    ],
+    "image": "https://loremflickr.com/800/800/tamil,book?lock=153",
+    "rating": 4.7,
+    "numReviews": 203
+  },
+  {
+    "name": "Atomic Habits Workbook",
+    "category": "Books",
+    "brand": "James Clear",
+    "price": 349,
+    "stock": 85,
+    "description": "Practical companion to build good habits.",
+    "images": [
+      "https://loremflickr.com/800/800/notebook,habit?lock=156",
+      "https://loremflickr.com/800/800/notebook,habit?lock=157",
+      "https://loremflickr.com/800/800/notebook,habit?lock=158"
+    ],
+    "image": "https://loremflickr.com/800/800/notebook,habit?lock=156",
+    "rating": 4.2,
+    "numReviews": 216
+  },
+  {
+    "name": "Yonex Badminton Racket Astrox",
+    "category": "Sports",
+    "brand": "Yonex",
+    "price": 3499,
+    "stock": 35,
+    "description": "Graphite frame racket for power and control.",
+    "images": [
+      "https://loremflickr.com/800/800/badminton,racket?lock=159",
+      "https://loremflickr.com/800/800/badminton,racket?lock=160",
+      "https://loremflickr.com/800/800/badminton,racket?lock=161"
+    ],
+    "image": "https://loremflickr.com/800/800/badminton,racket?lock=159",
+    "rating": 4.9,
+    "numReviews": 229
+  },
+  {
+    "name": "Nivia Yoga Mat 6mm",
+    "category": "Sports",
+    "brand": "Nivia",
+    "price": 699,
+    "stock": 100,
+    "description": "Anti-slip eco-friendly yoga mat with carry strap.",
+    "images": [
+      "https://loremflickr.com/800/800/yoga,mat?lock=162",
+      "https://loremflickr.com/800/800/yoga,mat?lock=163",
+      "https://loremflickr.com/800/800/yoga,mat?lock=164"
+    ],
+    "image": "https://loremflickr.com/800/800/yoga,mat?lock=162",
+    "rating": 4.4,
+    "numReviews": 242
+  },
+  {
+    "name": "Cosco Skipping Rope",
+    "category": "Sports",
+    "brand": "Cosco",
+    "price": 249,
+    "stock": 200,
+    "description": "Adjustable speed rope with foam handles.",
+    "images": [
+      "https://loremflickr.com/800/800/skipping,rope?lock=165",
+      "https://loremflickr.com/800/800/skipping,rope?lock=166",
+      "https://loremflickr.com/800/800/skipping,rope?lock=167"
+    ],
+    "image": "https://loremflickr.com/800/800/skipping,rope?lock=165",
+    "rating": 3.9,
+    "numReviews": 255
+  },
+  {
+    "name": "Boldfit Adjustable Dumbbells 20kg",
+    "category": "Sports",
+    "brand": "Boldfit",
+    "price": 2999,
+    "stock": 40,
+    "description": "Home gym dumbbell set with anti-slip grip.",
+    "images": [
+      "https://loremflickr.com/800/800/dumbbell?lock=168",
+      "https://loremflickr.com/800/800/dumbbell?lock=169",
+      "https://loremflickr.com/800/800/dumbbell?lock=170"
+    ],
+    "image": "https://loremflickr.com/800/800/dumbbell?lock=168",
+    "rating": 4.6,
+    "numReviews": 268
+  },
+  {
+    "name": "SG Cricket Batting Gloves",
+    "category": "Sports",
+    "brand": "SG",
+    "price": 1199,
+    "stock": 60,
+    "description": "Lightweight protective gloves for batsmen.",
+    "images": [
+      "https://loremflickr.com/800/800/cricket,gloves?lock=171",
+      "https://loremflickr.com/800/800/cricket,gloves?lock=172",
+      "https://loremflickr.com/800/800/cricket,gloves?lock=173"
+    ],
+    "image": "https://loremflickr.com/800/800/cricket,gloves?lock=171",
+    "rating": 4.1,
+    "numReviews": 281
+  },
+  {
+    "name": "Decathlon Football Size 5",
+    "category": "Sports",
+    "brand": "Kipsta",
+    "price": 899,
+    "stock": 90,
+    "description": "Durable training football with machine stitching.",
+    "images": [
+      "https://loremflickr.com/800/800/football,soccer?lock=174",
+      "https://loremflickr.com/800/800/football,soccer?lock=175",
+      "https://loremflickr.com/800/800/football,soccer?lock=176"
+    ],
+    "image": "https://loremflickr.com/800/800/football,soccer?lock=174",
+    "rating": 4.8,
+    "numReviews": 294
+  },
+  {
+    "name": "Hero Sprint Cycle 26T",
+    "category": "Sports",
+    "brand": "Hero",
+    "price": 7499,
+    "stock": 15,
+    "description": "Single-speed mountain-style cycle with steel frame.",
+    "images": [
+      "https://loremflickr.com/800/800/bicycle?lock=177",
+      "https://loremflickr.com/800/800/bicycle?lock=178",
+      "https://loremflickr.com/800/800/bicycle?lock=179"
+    ],
+    "image": "https://loremflickr.com/800/800/bicycle?lock=177",
+    "rating": 4.3,
+    "numReviews": 307
+  },
+  {
+    "name": "Fitbit Resistance Bands Set",
+    "category": "Sports",
+    "brand": "Fitbit",
+    "price": 599,
+    "stock": 110,
+    "description": "Set of 5 latex resistance bands for workouts.",
+    "images": [
+      "https://loremflickr.com/800/800/resistance,band,gym?lock=180",
+      "https://loremflickr.com/800/800/resistance,band,gym?lock=181",
+      "https://loremflickr.com/800/800/resistance,band,gym?lock=182"
+    ],
+    "image": "https://loremflickr.com/800/800/resistance,band,gym?lock=180",
+    "rating": 3.8,
+    "numReviews": 320
+  },
+  {
+    "name": "Maybelline Fit Me Foundation",
+    "category": "Beauty",
+    "brand": "Maybelline",
+    "price": 599,
+    "stock": 80,
+    "description": "Lightweight matte foundation for natural coverage.",
+    "images": [
+      "https://loremflickr.com/800/800/foundation,makeup?lock=183",
+      "https://loremflickr.com/800/800/foundation,makeup?lock=184",
+      "https://loremflickr.com/800/800/foundation,makeup?lock=185"
+    ],
+    "image": "https://loremflickr.com/800/800/foundation,makeup?lock=183",
+    "rating": 4.5,
+    "numReviews": 333
+  },
+  {
+    "name": "Lakme 9to5 Compact",
+    "category": "Beauty",
+    "brand": "Lakme",
+    "price": 349,
+    "stock": 95,
+    "description": "Oil-control compact with SPF 20.",
+    "images": [
+      "https://loremflickr.com/800/800/compact,makeup?lock=186",
+      "https://loremflickr.com/800/800/compact,makeup?lock=187",
+      "https://loremflickr.com/800/800/compact,makeup?lock=188"
+    ],
+    "image": "https://loremflickr.com/800/800/compact,makeup?lock=186",
+    "rating": 4.0,
+    "numReviews": 346
+  },
+  {
+    "name": "Nivea Soft Moisturising Cream",
+    "category": "Beauty",
+    "brand": "Nivea",
+    "price": 249,
+    "stock": 150,
+    "description": "Light cream for face, hands and body.",
+    "images": [
+      "https://loremflickr.com/800/800/moisturizer?lock=189",
+      "https://loremflickr.com/800/800/moisturizer?lock=190",
+      "https://loremflickr.com/800/800/moisturizer?lock=191"
+    ],
+    "image": "https://loremflickr.com/800/800/moisturizer?lock=189",
+    "rating": 4.7,
+    "numReviews": 359
+  },
+  {
+    "name": "Biotique Bio Almond Oil",
+    "category": "Beauty",
+    "brand": "Biotique",
+    "price": 299,
+    "stock": 100,
+    "description": "Nourishing hair oil with almond and neem.",
+    "images": [
+      "https://loremflickr.com/800/800/hair,oil?lock=192",
+      "https://loremflickr.com/800/800/hair,oil?lock=193",
+      "https://loremflickr.com/800/800/hair,oil?lock=194"
+    ],
+    "image": "https://loremflickr.com/800/800/hair,oil?lock=192",
+    "rating": 4.2,
+    "numReviews": 372
+  },
+  {
+    "name": "L'Oreal Paris Shampoo 650ml",
+    "category": "Beauty",
+    "brand": "L'Oreal",
+    "price": 549,
+    "stock": 85,
+    "description": "Total Repair 5 shampoo for damaged hair.",
+    "images": [
+      "https://loremflickr.com/800/800/shampoo?lock=195",
+      "https://loremflickr.com/800/800/shampoo?lock=196",
+      "https://loremflickr.com/800/800/shampoo?lock=197"
+    ],
+    "image": "https://loremflickr.com/800/800/shampoo?lock=195",
+    "rating": 4.9,
+    "numReviews": 385
+  },
+  {
+    "name": "Mamaearth Vitamin C Face Wash",
+    "category": "Beauty",
+    "brand": "Mamaearth",
+    "price": 299,
+    "stock": 120,
+    "description": "Brightening face wash with vitamin C and turmeric.",
+    "images": [
+      "https://loremflickr.com/800/800/facewash,skincare?lock=198",
+      "https://loremflickr.com/800/800/facewash,skincare?lock=199",
+      "https://loremflickr.com/800/800/facewash,skincare?lock=200"
+    ],
+    "image": "https://loremflickr.com/800/800/facewash,skincare?lock=198",
+    "rating": 4.4,
+    "numReviews": 398
+  },
+  {
+    "name": "Forest Essentials Sandalwood Soap",
+    "category": "Beauty",
+    "brand": "Forest Essentials",
+    "price": 499,
+    "stock": 45,
+    "description": "Ayurvedic handmade luxury soap bar.",
+    "images": [
+      "https://loremflickr.com/800/800/soap,sandalwood?lock=201",
+      "https://loremflickr.com/800/800/soap,sandalwood?lock=202",
+      "https://loremflickr.com/800/800/soap,sandalwood?lock=203"
+    ],
+    "image": "https://loremflickr.com/800/800/soap,sandalwood?lock=201",
+    "rating": 3.9,
+    "numReviews": 411
+  },
+  {
+    "name": "Philips Beard Trimmer BT3231",
+    "category": "Beauty",
+    "brand": "Philips",
+    "price": 1599,
+    "stock": 60,
+    "description": "Cordless trimmer with 20 length settings.",
+    "images": [
+      "https://loremflickr.com/800/800/trimmer,beard?lock=204",
+      "https://loremflickr.com/800/800/trimmer,beard?lock=205",
+      "https://loremflickr.com/800/800/trimmer,beard?lock=206"
+    ],
+    "image": "https://loremflickr.com/800/800/trimmer,beard?lock=204",
+    "rating": 4.6,
+    "numReviews": 424
+  },
+  {
+    "name": "Basmati Rice India Gate 5kg",
+    "category": "Grocery",
+    "brand": "India Gate",
+    "price": 699,
+    "stock": 150,
+    "description": "Long-grain aged basmati rice.",
+    "images": [
+      "https://loremflickr.com/800/800/basmati,rice?lock=207",
+      "https://loremflickr.com/800/800/basmati,rice?lock=208",
+      "https://loremflickr.com/800/800/basmati,rice?lock=209"
+    ],
+    "image": "https://loremflickr.com/800/800/basmati,rice?lock=207",
+    "rating": 4.1,
+    "numReviews": 437
+  },
+  {
+    "name": "Tata Tea Gold 500g",
+    "category": "Grocery",
+    "brand": "Tata",
+    "price": 289,
+    "stock": 200,
+    "description": "Premium blend of Assam tea leaves.",
+    "images": [
+      "https://loremflickr.com/800/800/tea?lock=210",
+      "https://loremflickr.com/800/800/tea?lock=211",
+      "https://loremflickr.com/800/800/tea?lock=212"
+    ],
+    "image": "https://loremflickr.com/800/800/tea?lock=210",
+    "rating": 4.8,
+    "numReviews": 450
+  },
+  {
+    "name": "Saffola Gold Oil 1L",
+    "category": "Grocery",
+    "brand": "Saffola",
+    "price": 199,
+    "stock": 180,
+    "description": "Blended edible oil for a healthy heart.",
+    "images": [
+      "https://loremflickr.com/800/800/cooking,oil?lock=213",
+      "https://loremflickr.com/800/800/cooking,oil?lock=214",
+      "https://loremflickr.com/800/800/cooking,oil?lock=215"
+    ],
+    "image": "https://loremflickr.com/800/800/cooking,oil?lock=213",
+    "rating": 4.3,
+    "numReviews": 463
+  },
+  {
+    "name": "Maggi 2-Minute Noodles Pack of 12",
+    "category": "Grocery",
+    "brand": "Maggi",
+    "price": 168,
+    "stock": 300,
+    "description": "Masala instant noodles family pack.",
+    "images": [
+      "https://loremflickr.com/800/800/noodles?lock=216",
+      "https://loremflickr.com/800/800/noodles?lock=217",
+      "https://loremflickr.com/800/800/noodles?lock=218"
+    ],
+    "image": "https://loremflickr.com/800/800/noodles?lock=216",
+    "rating": 3.8,
+    "numReviews": 476
+  },
+  {
+    "name": "MTR Sambar Powder 200g",
+    "category": "Grocery",
+    "brand": "MTR",
+    "price": 99,
+    "stock": 250,
+    "description": "Authentic South Indian sambar masala.",
+    "images": [
+      "https://loremflickr.com/800/800/spices?lock=219",
+      "https://loremflickr.com/800/800/spices?lock=220",
+      "https://loremflickr.com/800/800/spices?lock=221"
+    ],
+    "image": "https://loremflickr.com/800/800/spices?lock=219",
+    "rating": 4.5,
+    "numReviews": 489
+  },
+  {
+    "name": "Aachi Chicken Masala 200g",
+    "category": "Grocery",
+    "brand": "Aachi",
+    "price": 85,
+    "stock": 260,
+    "description": "Tamil Nadu style chicken curry masala.",
+    "images": [
+      "https://loremflickr.com/800/800/masala,spices?lock=222",
+      "https://loremflickr.com/800/800/masala,spices?lock=223",
+      "https://loremflickr.com/800/800/masala,spices?lock=224"
+    ],
+    "image": "https://loremflickr.com/800/800/masala,spices?lock=222",
+    "rating": 4.0,
+    "numReviews": 22
+  },
+  {
+    "name": "Kellogg's Corn Flakes 875g",
+    "category": "Grocery",
+    "brand": "Kellogg's",
+    "price": 399,
+    "stock": 100,
+    "description": "Crunchy breakfast cereal with iron.",
+    "images": [
+      "https://loremflickr.com/800/800/cornflakes?lock=225",
+      "https://loremflickr.com/800/800/cornflakes?lock=226",
+      "https://loremflickr.com/800/800/cornflakes?lock=227"
+    ],
+    "image": "https://loremflickr.com/800/800/cornflakes?lock=225",
+    "rating": 4.7,
+    "numReviews": 35
+  },
+  {
+    "name": "Cashew Nuts Premium 500g",
+    "category": "Grocery",
+    "brand": "Nutraj",
+    "price": 549,
+    "stock": 90,
+    "description": "Whole W320 grade cashews.",
+    "images": [
+      "https://loremflickr.com/800/800/cashew,nuts?lock=228",
+      "https://loremflickr.com/800/800/cashew,nuts?lock=229",
+      "https://loremflickr.com/800/800/cashew,nuts?lock=230"
+    ],
+    "image": "https://loremflickr.com/800/800/cashew,nuts?lock=228",
+    "rating": 4.2,
+    "numReviews": 48
+  },
+  {
+    "name": "Dettol Hand Sanitizer 500ml",
+    "category": "Health",
+    "brand": "Dettol",
+    "price": 199,
+    "stock": 200,
+    "description": "Kills 99.9% germs without water.",
+    "images": [
+      "https://loremflickr.com/800/800/sanitizer?lock=231",
+      "https://loremflickr.com/800/800/sanitizer?lock=232",
+      "https://loremflickr.com/800/800/sanitizer?lock=233"
+    ],
+    "image": "https://loremflickr.com/800/800/sanitizer?lock=231",
+    "rating": 4.9,
+    "numReviews": 61
+  },
+  {
+    "name": "Dr. Trust Digital Thermometer",
+    "category": "Health",
+    "brand": "Dr. Trust",
+    "price": 249,
+    "stock": 150,
+    "description": "Fast and accurate digital thermometer.",
+    "images": [
+      "https://loremflickr.com/800/800/thermometer?lock=234",
+      "https://loremflickr.com/800/800/thermometer?lock=235",
+      "https://loremflickr.com/800/800/thermometer?lock=236"
+    ],
+    "image": "https://loremflickr.com/800/800/thermometer?lock=234",
+    "rating": 4.4,
+    "numReviews": 74
+  },
+  {
+    "name": "Accu-Chek Active Glucometer",
+    "category": "Health",
+    "brand": "Accu-Chek",
+    "price": 999,
+    "stock": 70,
+    "description": "Blood glucose monitor with 10 test strips.",
+    "images": [
+      "https://loremflickr.com/800/800/glucometer?lock=237",
+      "https://loremflickr.com/800/800/glucometer?lock=238",
+      "https://loremflickr.com/800/800/glucometer?lock=239"
+    ],
+    "image": "https://loremflickr.com/800/800/glucometer?lock=237",
+    "rating": 3.9,
+    "numReviews": 87
+  },
+  {
+    "name": "Revital H Multivitamin 60 Capsules",
+    "category": "Health",
+    "brand": "Revital",
+    "price": 399,
+    "stock": 130,
+    "description": "Daily health supplement with ginseng.",
+    "images": [
+      "https://loremflickr.com/800/800/vitamin,capsule?lock=240",
+      "https://loremflickr.com/800/800/vitamin,capsule?lock=241",
+      "https://loremflickr.com/800/800/vitamin,capsule?lock=242"
+    ],
+    "image": "https://loremflickr.com/800/800/vitamin,capsule?lock=240",
+    "rating": 4.6,
+    "numReviews": 100
+  },
+  {
+    "name": "Dabur Chyawanprash 1kg",
+    "category": "Health",
+    "brand": "Dabur",
+    "price": 385,
+    "stock": 160,
+    "description": "Ayurvedic immunity booster.",
+    "images": [
+      "https://loremflickr.com/800/800/ayurveda?lock=243",
+      "https://loremflickr.com/800/800/ayurveda?lock=244",
+      "https://loremflickr.com/800/800/ayurveda?lock=245"
+    ],
+    "image": "https://loremflickr.com/800/800/ayurveda?lock=243",
+    "rating": 4.1,
+    "numReviews": 113
+  },
+  {
+    "name": "Hot Water Bag Rubber",
+    "category": "Health",
+    "brand": "Flamingo",
+    "price": 299,
+    "stock": 100,
+    "description": "Pain relief heating bag with cover.",
+    "images": [
+      "https://loremflickr.com/800/800/hot,water,bottle?lock=246",
+      "https://loremflickr.com/800/800/hot,water,bottle?lock=247",
+      "https://loremflickr.com/800/800/hot,water,bottle?lock=248"
+    ],
+    "image": "https://loremflickr.com/800/800/hot,water,bottle?lock=246",
+    "rating": 4.8,
+    "numReviews": 126
+  },
+  {
+    "name": "Face Mask N95 Pack of 10",
+    "category": "Health",
+    "brand": "3M",
+    "price": 499,
+    "stock": 250,
+    "description": "Protective respirator masks.",
+    "images": [
+      "https://loremflickr.com/800/800/facemask?lock=249",
+      "https://loremflickr.com/800/800/facemask?lock=250",
+      "https://loremflickr.com/800/800/facemask?lock=251"
+    ],
+    "image": "https://loremflickr.com/800/800/facemask?lock=249",
+    "rating": 4.3,
+    "numReviews": 139
+  },
+  {
+    "name": "Zandu Balm 25ml",
+    "category": "Health",
+    "brand": "Zandu",
+    "price": 75,
+    "stock": 300,
+    "description": "Ayurvedic pain relief balm.",
+    "images": [
+      "https://loremflickr.com/800/800/balm?lock=252",
+      "https://loremflickr.com/800/800/balm?lock=253",
+      "https://loremflickr.com/800/800/balm?lock=254"
+    ],
+    "image": "https://loremflickr.com/800/800/balm?lock=252",
+    "rating": 3.8,
+    "numReviews": 152
+  },
+  {
+    "name": "Omega-3 Fish Oil 60 Softgels",
+    "category": "Health",
+    "brand": "HealthKart",
+    "price": 799,
+    "stock": 80,
+    "description": "Supports heart and brain health.",
+    "images": [
+      "https://loremflickr.com/800/800/fishoil,supplement?lock=255",
+      "https://loremflickr.com/800/800/fishoil,supplement?lock=256",
+      "https://loremflickr.com/800/800/fishoil,supplement?lock=257"
+    ],
+    "image": "https://loremflickr.com/800/800/fishoil,supplement?lock=255",
+    "rating": 4.5,
+    "numReviews": 165
+  },
+  {
+    "name": "Steam Vaporizer Inhaler",
+    "category": "Health",
+    "brand": "Beurer",
+    "price": 649,
+    "stock": 90,
+    "description": "Personal steam inhaler for cold relief.",
+    "images": [
+      "https://loremflickr.com/800/800/steam,vaporizer?lock=258",
+      "https://loremflickr.com/800/800/steam,vaporizer?lock=259",
+      "https://loremflickr.com/800/800/steam,vaporizer?lock=260"
+    ],
+    "image": "https://loremflickr.com/800/800/steam,vaporizer?lock=258",
+    "rating": 4.0,
+    "numReviews": 178
+  },
+  {
+    "name": "Bosch Car Vacuum Cleaner",
+    "category": "Automotive",
+    "brand": "Bosch",
+    "price": 2499,
+    "stock": 40,
+    "description": "Portable 12V vacuum cleaner for cars.",
+    "images": [
+      "https://loremflickr.com/800/800/car,vacuum?lock=261",
+      "https://loremflickr.com/800/800/car,vacuum?lock=262",
+      "https://loremflickr.com/800/800/car,vacuum?lock=263"
+    ],
+    "image": "https://loremflickr.com/800/800/car,vacuum?lock=261",
+    "rating": 4.7,
+    "numReviews": 191
+  },
+  {
+    "name": "Michelin Tyre Inflator",
+    "category": "Automotive",
+    "brand": "Michelin",
+    "price": 3299,
+    "stock": 30,
+    "description": "Digital air compressor for cars and bikes.",
+    "images": [
+      "https://loremflickr.com/800/800/tyre,inflator?lock=264",
+      "https://loremflickr.com/800/800/tyre,inflator?lock=265",
+      "https://loremflickr.com/800/800/tyre,inflator?lock=266"
+    ],
+    "image": "https://loremflickr.com/800/800/tyre,inflator?lock=264",
+    "rating": 4.2,
+    "numReviews": 204
+  },
+  {
+    "name": "Castrol Magnatec 10W-40 Engine Oil 3L",
+    "category": "Automotive",
+    "brand": "Castrol",
+    "price": 1699,
+    "stock": 80,
+    "description": "Synthetic technology engine oil.",
+    "images": [
+      "https://loremflickr.com/800/800/engine,oil?lock=267",
+      "https://loremflickr.com/800/800/engine,oil?lock=268",
+      "https://loremflickr.com/800/800/engine,oil?lock=269"
+    ],
+    "image": "https://loremflickr.com/800/800/engine,oil?lock=267",
+    "rating": 4.9,
+    "numReviews": 217
+  },
+  {
+    "name": "Studds Full Face Helmet",
+    "category": "Automotive",
+    "brand": "Studds",
+    "price": 1899,
+    "stock": 50,
+    "description": "ISI certified helmet with anti-scratch visor.",
+    "images": [
+      "https://loremflickr.com/800/800/motorcycle,helmet?lock=270",
+      "https://loremflickr.com/800/800/motorcycle,helmet?lock=271",
+      "https://loremflickr.com/800/800/motorcycle,helmet?lock=272"
+    ],
+    "image": "https://loremflickr.com/800/800/motorcycle,helmet?lock=270",
+    "rating": 4.4,
+    "numReviews": 230
+  },
+  {
+    "name": "Car Dashboard Camera Full HD",
+    "category": "Automotive",
+    "brand": "360",
+    "price": 3499,
+    "stock": 35,
+    "description": "1080P dash cam with night vision.",
+    "images": [
+      "https://loremflickr.com/800/800/dashcam?lock=273",
+      "https://loremflickr.com/800/800/dashcam?lock=274",
+      "https://loremflickr.com/800/800/dashcam?lock=275"
+    ],
+    "image": "https://loremflickr.com/800/800/dashcam?lock=273",
+    "rating": 3.9,
+    "numReviews": 243
+  },
+  {
+    "name": "Universal Car Phone Holder",
+    "category": "Automotive",
+    "brand": "Ant Esports",
+    "price": 399,
+    "stock": 150,
+    "description": "360° rotating dashboard mobile mount.",
+    "images": [
+      "https://loremflickr.com/800/800/car,phone,holder?lock=276",
+      "https://loremflickr.com/800/800/car,phone,holder?lock=277",
+      "https://loremflickr.com/800/800/car,phone,holder?lock=278"
+    ],
+    "image": "https://loremflickr.com/800/800/car,phone,holder?lock=276",
+    "rating": 4.6,
+    "numReviews": 256
+  },
+  {
+    "name": "Seat Cover Leatherette Set",
+    "category": "Automotive",
+    "brand": "Autofurnish",
+    "price": 5999,
+    "stock": 20,
+    "description": "Premium cushioned seat covers for 5-seater.",
+    "images": [
+      "https://loremflickr.com/800/800/car,seat?lock=279",
+      "https://loremflickr.com/800/800/car,seat?lock=280",
+      "https://loremflickr.com/800/800/car,seat?lock=281"
+    ],
+    "image": "https://loremflickr.com/800/800/car,seat?lock=279",
+    "rating": 4.1,
+    "numReviews": 269
+  },
+  {
+    "name": "Motul Chain Lube 400ml",
+    "category": "Automotive",
+    "brand": "Motul",
+    "price": 549,
+    "stock": 100,
+    "description": "Chain lubricant for bikes.",
+    "images": [
+      "https://loremflickr.com/800/800/bike,chain?lock=282",
+      "https://loremflickr.com/800/800/bike,chain?lock=283",
+      "https://loremflickr.com/800/800/bike,chain?lock=284"
+    ],
+    "image": "https://loremflickr.com/800/800/bike,chain?lock=282",
+    "rating": 4.8,
+    "numReviews": 282
+  },
+  {
+    "name": "Barbie Dreamhouse Doll",
+    "category": "Toys",
+    "brand": "Barbie",
+    "price": 2999,
+    "stock": 25,
+    "description": "Fashion doll with accessories.",
+    "images": [
+      "https://loremflickr.com/800/800/barbie,doll?lock=285",
+      "https://loremflickr.com/800/800/barbie,doll?lock=286",
+      "https://loremflickr.com/800/800/barbie,doll?lock=287"
+    ],
+    "image": "https://loremflickr.com/800/800/barbie,doll?lock=285",
+    "rating": 4.3,
+    "numReviews": 295
+  },
+  {
+    "name": "Remote Control Racing Car",
+    "category": "Toys",
+    "brand": "Hot Wheels",
+    "price": 1499,
+    "stock": 50,
+    "description": "High-speed 2.4GHz RC car.",
+    "images": [
+      "https://loremflickr.com/800/800/rc,car,toy?lock=288",
+      "https://loremflickr.com/800/800/rc,car,toy?lock=289",
+      "https://loremflickr.com/800/800/rc,car,toy?lock=290"
+    ],
+    "image": "https://loremflickr.com/800/800/rc,car,toy?lock=288",
+    "rating": 3.8,
+    "numReviews": 308
+  },
+  {
+    "name": "Funskool Jenga Classic",
+    "category": "Toys",
+    "brand": "Funskool",
+    "price": 649,
+    "stock": 70,
+    "description": "Classic wooden block stacking game.",
+    "images": [
+      "https://loremflickr.com/800/800/jenga,game?lock=291",
+      "https://loremflickr.com/800/800/jenga,game?lock=292",
+      "https://loremflickr.com/800/800/jenga,game?lock=293"
+    ],
+    "image": "https://loremflickr.com/800/800/jenga,game?lock=291",
+    "rating": 4.5,
+    "numReviews": 321
+  },
+  {
+    "name": "LEGO Classic Brick Box",
+    "category": "Toys",
+    "brand": "LEGO",
+    "price": 1999,
+    "stock": 40,
+    "description": "484 colourful bricks for creative building.",
+    "images": [
+      "https://loremflickr.com/800/800/lego?lock=294",
+      "https://loremflickr.com/800/800/lego?lock=295",
+      "https://loremflickr.com/800/800/lego?lock=296"
+    ],
+    "image": "https://loremflickr.com/800/800/lego?lock=294",
+    "rating": 4.0,
+    "numReviews": 334
+  },
+  {
+    "name": "Nerf Elite Blaster",
+    "category": "Toys",
+    "brand": "Nerf",
+    "price": 1799,
+    "stock": 35,
+    "description": "Foam dart blaster with 6 darts.",
+    "images": [
+      "https://loremflickr.com/800/800/nerf,toy?lock=297",
+      "https://loremflickr.com/800/800/nerf,toy?lock=298",
+      "https://loremflickr.com/800/800/nerf,toy?lock=299"
+    ],
+    "image": "https://loremflickr.com/800/800/nerf,toy?lock=297",
+    "rating": 4.7,
+    "numReviews": 347
+  },
+  {
+    "name": "Teddy Bear Soft Toy 3ft",
+    "category": "Toys",
+    "brand": "Archies",
+    "price": 1299,
+    "stock": 45,
+    "description": "Huggable plush teddy bear.",
+    "images": [
+      "https://loremflickr.com/800/800/teddy,bear?lock=300",
+      "https://loremflickr.com/800/800/teddy,bear?lock=301",
+      "https://loremflickr.com/800/800/teddy,bear?lock=302"
+    ],
+    "image": "https://loremflickr.com/800/800/teddy,bear?lock=300",
+    "rating": 4.2,
+    "numReviews": 360
+  }
+]
