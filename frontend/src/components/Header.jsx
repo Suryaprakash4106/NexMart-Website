@@ -57,6 +57,7 @@ export default function Header() {
           <Link to="/" className="wm">NEXMART</Link>
         </div>
         <nav className="hn">
+          <Link to="/" className={on('/')}>Home</Link>
           <Link to="/shop" className={on('/shop')}>Shop</Link>
           <Link to="/deals" className={on('/deals')}>Hot deals</Link>
           {Object.entries(CATS).slice(0, 4).map(([k, v]) => <Link key={k} to={'/c/' + k} className={on('/c/' + k)}>{v}</Link>)}

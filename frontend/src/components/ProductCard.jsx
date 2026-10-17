@@ -19,9 +19,7 @@ export default function ProductCard({ p }) {
       <div className="cb">
         <span className="br">{p.brand}</span>
         <div className="nm">{p.name}</div>
-        {p.reviews > 0
-          ? <div className="st">{p.rating} <b>{stars(p.rating)}</b> <span>({p.reviews.toLocaleString()})</span></div>
-          : <div className="mu" style={{ fontSize: 12 }}>No ratings yet</div>}
+        <div className="st"><b>{stars(p.rating || 0)}</b> {p.reviews > 0 ? <span>{p.rating} ({p.reviews.toLocaleString()})</span> : <span>No ratings yet</span>}</div>
         <div className="pr"><sup>₹</sup>{Number(p.price).toLocaleString('en-IN')}</div>
         <div className="mrp">{mrp ? <>Was <s>{inr(p.originalPrice)}</s> <em>{off(p)}% off</em></> : '\u00A0'}</div>
         <div className="dl">{p.price >= 499 ? <>Free delivery by <b>{deliveryBy(3)}</b></> : <>₹49 delivery by <b>{deliveryBy(3)}</b></>}</div>

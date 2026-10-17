@@ -30,7 +30,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <main className={lp ? 'lp' : 'w'}>
+      <main className={lp ? 'lpage' : 'w'}>
         {loadError ? <div className="box" style={{ marginTop: top }}>{loadError}</div>
           : !products.length ? <div className="grid" style={{ marginTop: top }}>{Array.from({ length: 10 }, (_, i) => <div key={i} className="sk" />)}</div>
           : (

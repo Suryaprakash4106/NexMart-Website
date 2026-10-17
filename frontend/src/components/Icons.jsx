@@ -13,3 +13,4 @@ export const Search = () => I(<><circle cx="11" cy="11" r="7" /><path d="M21 21l
 export const Lock = () => I(<><rect x="4" y="11" width="16" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /></>, 40, 1.6);
 export const Card = () => I(<><rect x="2" y="5" width="20" height="14" rx="2" /><path d="M2 10h20" /></>, 40, 1.6);
 export const Dash = () => I(<path d="M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z" />, 40, 1.6);
+export const Rotate = ({ size = 20 }) => I(<><path d="M21 12a9 9 0 1 1-3-6.7" /><path d="M21 4v5h-5" /></>, size);

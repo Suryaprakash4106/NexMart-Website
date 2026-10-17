@@ -8,6 +8,7 @@ const Product = mongoose.model('Product', new mongoose.Schema({
   deal: Boolean, featured: Boolean, features: [String], description: String,
   subcategory: { type: String, index: true },
   specs: [{ k: String, v: String }],
+  spin: [String],                                           // optional: 8+ photos taken around the product for the 360 view
   tags: [String],
 }, { timestamps: true }));
 

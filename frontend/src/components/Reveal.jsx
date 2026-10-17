@@ -12,5 +12,5 @@ export default function Reveal({ as: Tag = 'div', className = '', delay = 0, chi
     io.observe(el);
     return () => io.disconnect();
   }, []);
-  return <Tag ref={ref} className={'rvl' + (on ? ' in' : '') + (className ? ' ' + className : '')} style={{ transitionDelay: delay + 'ms' }} {...rest}>{children}</Tag>;
+  return <Tag ref={ref} className={'rvl' + (on ? ' rv-on' : '') + (className ? ' ' + className : '')} style={{ transitionDelay: delay + 'ms' }} {...rest}>{children}</Tag>;
 }

@@ -50,6 +50,8 @@ export default function CategoryDrawer({ open, onClose }) {
             </section>
             <section>
               <h4>Popular</h4>
+              <Link className="dw-lnk" to="/">Home</Link>
+              <Link className="dw-lnk" to="/shop">All products</Link>
               <Link className="dw-lnk" to="/deals">Hot deals</Link>
               <h4>My NexMart</h4>
               <Link className="dw-lnk" to="/account">My account</Link>
