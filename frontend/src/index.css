@@ -712,3 +712,28 @@ footer .cp{border-top:1px solid #ffffff22;color:#7c7c79}
   letter-spacing:.14em;
   color:var(--mute);
 }
+
+
+/* ===== OTP screen ===== */
+.otp{display:grid;gap:14px;text-align:center;justify-items:stretch}
+.otp h2{font-family:var(--disp);font-weight:800;font-size:26px;letter-spacing:-.02em}
+.otp-ico{width:64px;height:64px;border:1.5px solid var(--ink);border-radius:50%;display:grid;place-items:center;margin:0 auto;color:var(--ink);animation:otpPop .5s cubic-bezier(.2,.7,.2,1) both}
+.otp-step{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.otp-sub{color:var(--mute);font-size:14px;line-height:1.5}
+.otp-sub b{color:var(--ink);word-break:break-all}
+.otp-box{display:flex;gap:10px;justify-content:center;margin-top:6px}
+.otp-box input{flex:1;min-width:0;max-width:56px;height:64px;text-align:center;font-family:var(--disp);font-size:28px;font-weight:800;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:0;padding:0;outline:0;caret-color:var(--ink);transition:border-color .2s,transform .15s,background .2s}
+.otp-box input:focus{border-color:var(--ink);transform:translateY(-3px)}
+.otp-box input.filled{border-color:var(--ink);background:var(--soft)}
+.otp-box input:disabled{opacity:.6}
+.otp-box.shake{animation:otpShake .45s}
+.otp-box.shake input{border-color:var(--red)}
+.otp-err{min-height:18px;font-size:13px;font-weight:600;color:var(--red)}
+.otp-row{display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.otp-link{background:none;border:0;padding:0;font-size:13px;font-weight:700;color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.otp-link:disabled{color:var(--mute);text-decoration:none;cursor:not-allowed}
+.otp-back{justify-self:center;font-weight:600;color:var(--mute)}
+@keyframes otpShake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}
+@keyframes otpPop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+@media(max-width:420px){.otp-box{gap:7px}.otp-box input{height:54px;font-size:24px}}
+@media(prefers-reduced-motion:reduce){.otp-ico,.otp-box.shake{animation:none}}

@@ -18,13 +18,19 @@ export function AuthProvider({ children }) {
     setUser(null);
   }, [setUser]);
 
-  const authenticate = async (mode, form) => {
-    const d = await api(mode === 'register' ? '/auth/register' : '/auth/login', 'POST', form);
+  const finish = (d) => {
     localStorage.setItem('nm_token', d.token);
     setUser(d.user);
     setAuthOpen(false);
     return d.user;
   };
+
+  // password login
+  const authenticate = async (mode, form) => finish(await api('/auth/login', 'POST', form));
+  // signup with email OTP: send, resend, verify
+  const sendOtp = (form) => api('/auth/register/send-otp', 'POST', form);
+  const resendOtp = (email) => api('/auth/register/resend-otp', 'POST', { email });
+  const verifyOtp = async (email, otp) => finish(await api('/auth/register/verify-otp', 'POST', { email, otp }));
 
   useEffect(() => {
     if (localStorage.getItem('nm_token')) api('/users/me').then((d) => setUser(d.user)).catch(() => {});
@@ -33,7 +39,7 @@ export function AuthProvider({ children }) {
   }, [logout, setUser]);
 
   return (
-    <AuthContext.Provider value={{ user, setUser, logout, authenticate, authOpen, setAuthOpen }}>
+    <AuthContext.Provider value={{ user, setUser, logout, authenticate, sendOtp, resendOtp, verifyOtp, authOpen, setAuthOpen }}>
       {children}
     </AuthContext.Provider>
   );
