@@ -4,4 +4,5 @@ module.exports = {
   Order: require('./Order'),
   Review: require('./Review'),
   Otp: require('./Otp'),
+  Activity: require('./Activity'),
 };

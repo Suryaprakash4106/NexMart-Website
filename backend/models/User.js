@@ -5,7 +5,7 @@ const User = mongoose.model('User', new mongoose.Schema({
   email: { type: String, required: true, unique: true, lowercase: true, trim: true },
   phone: String,
   password: { type: String, required: true },
-  role: { type: String, enum: ['user', 'admin'], default: 'user' },
+  role: { type: String, enum: ['user', 'support', 'manager', 'admin'], default: 'user' },
   cart: [{ productId: Number, qty: Number }],
   wishlist: [Number],
   addresses: [{ label: String, name: String, phone: String, addr: String, city: String, state: String, pin: String }],
