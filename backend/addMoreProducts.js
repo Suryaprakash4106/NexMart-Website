@@ -1,4 +1,4 @@
-// Adds the 108 new products from moreProducts.js (with description, highlights, specs, 3 photos each).
+// Adds the existing 108-product batch and 100 additional distinct products with descriptions, specs and photos.
 //   node addMoreProducts.js            -> DRY RUN (lists what would be added)
 //   node addMoreProducts.js --apply    -> adds them and downloads photos from Pixabay
 // Products whose name already exists are skipped, so it is safe to run twice.
@@ -8,7 +8,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const { Product } = require('./models');
 const { createPixabay } = require('./pixabayLib');
-const LIST = require('./moreProducts');
+const LIST = [...require('./moreProducts'), ...require('./newProducts')];
 
 const APPLY = process.argv.includes('--apply');
 const KEY = process.env.PIXABAY_API_KEY;
@@ -19,12 +19,20 @@ const mrp = (price, i) => Math.round((price * (1.12 + (i % 5) * 0.07)) / 10) * 1
 (async () => {
   if (!URI) throw new Error('MONGODB_URI is missing in backend/.env');
   if (APPLY && !KEY) throw new Error('PIXABAY_API_KEY is missing in backend/.env');
-  await mongoose.connect(URI);
+  await mongoose.connect(URI, { serverSelectionTimeoutMS: 10000 });
   const last = await Product.findOne().sort({ pid: -1 }).select('pid').lean();
   let pid = (last && last.pid) || 0;
   const have = new Set((await Product.find({}, 'name').lean()).map((p) => p.name.toLowerCase()));
-  const todo = LIST.filter((r) => !have.has(r[0].toLowerCase()));
-  console.log(`${LIST.length} products in the list, ${LIST.length - todo.length} already exist, ${todo.length} to add.\n`);
+  const seen = new Set();
+  const unique = LIST.filter((r) => {
+    const key = r[0].trim().toLowerCase();
+    if (seen.has(key)) throw new Error(`Duplicate product name in catalog batch: ${r[0]}`);
+    seen.add(key);
+    if (!(r[4] > 0)) throw new Error(`Invalid price for product: ${r[0]}`);
+    return true;
+  });
+  const todo = unique.filter((r) => !have.has(r[0].toLowerCase()));
+  console.log(`${unique.length} products in both batches, ${unique.length - todo.length} already exist, ${todo.length} to add.\n`);
 
   if (!APPLY) {
     todo.forEach((r) => console.log(`${r[2]} / ${r[3]}  ${r[0]}  Rs ${r[4]}`));
