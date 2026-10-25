@@ -2,6 +2,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { Box, Lock, Pin, Card, Heart, Dash } from '../components/Icons';
 
+const STAFF = {
+  admin: 'Orders, products, users and sales',
+  manager: 'Orders, products, stock and reviews',
+  support: 'View orders and moderate reviews',
+};
+
 const Tile = ({ icon, title, text, to }) => {
   const nav = useNavigate();
   return <div className="tile" onClick={() => nav(to)}>{icon}<div><b>{title}</b><span className="mu">{text}</span></div></div>;
@@ -21,7 +27,7 @@ export default function AccountPage() {
         <Tile icon={<Pin size={40} sw={1.6} />} title="My addresses" text="Manage delivery addresses" to="/account/addresses" />
         <Tile icon={<Card />} title="Payment options" text="How you can pay on NexMart" to="/account/payments" />
         <Tile icon={<Heart size={40} />} title="My wishlist" text="Items you saved for later" to="/wishlist" />
-        {user.role === 'admin' && <Tile icon={<Dash />} title="Admin dashboard" text="Orders, products and sales" to="/admin" />}
+        {STAFF[user.role] && <Tile icon={<Dash />} title="Admin dashboard" text={STAFF[user.role]} to="/admin" />}
       </div>
       <button className="btn ln" style={{ marginTop: 20 }} onClick={() => { logout(); nav('/'); }}>Sign out</button>
     </div>
