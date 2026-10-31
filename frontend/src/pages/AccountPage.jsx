@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useShop } from '../context/ShopContext';
 import { Box, Lock, Pin, Card, Heart, Dash } from '../components/Icons';
 
 const STAFF = {
@@ -15,6 +16,7 @@ const Tile = ({ icon, title, text, to }) => {
 
 export default function AccountPage() {
   const { user, logout } = useAuth();
+  const { toast } = useShop();
   const nav = useNavigate();
   return (
     <div className="narrow">
@@ -29,7 +31,7 @@ export default function AccountPage() {
         <Tile icon={<Heart size={40} />} title="My wishlist" text="Items you saved for later" to="/wishlist" />
         {STAFF[user.role] && <Tile icon={<Dash />} title="Admin dashboard" text={STAFF[user.role]} to="/admin" />}
       </div>
-      <button className="btn ln" style={{ marginTop: 20 }} onClick={() => { logout(); nav('/'); }}>Sign out</button>
+      <button className="btn ln" style={{ marginTop: 20 }} onClick={() => { logout(); toast('You have signed out safely', 'info'); nav('/'); }}>Sign out</button>
     </div>
   );
 }

@@ -1,6 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Routes, Route, useLocation, Link } from 'react-router-dom';
 import Header from './components/Header';
+import SceneBackdrop from './components/SceneBackdrop';
+import StartupLoader from './components/StartupLoader';
 import Footer from './components/Footer';
 import Toast from './components/Toast';
 import AuthModal from './components/AuthModal';
@@ -21,14 +23,28 @@ import AdminPage from './pages/AdminPage';
 
 export default function App() {
   const { pathname, search } = useLocation();
-  const { products, loadError } = useShop();
+  const { products, isInitialLoading, loadError, theme } = useShop();
+  const [bootReady, setBootReady] = useState(false);
+  const [bootLeaving, setBootLeaving] = useState(false);
+  const bootStartedAt = useRef(performance.now());
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  useEffect(() => {
+    if (isInitialLoading || bootReady) return undefined;
+    const waitForIntro = Math.max(0, 1250 - (performance.now() - bootStartedAt.current));
+    const leaveTimer = window.setTimeout(() => setBootLeaving(true), waitForIntro);
+    const readyTimer = window.setTimeout(() => setBootReady(true), waitForIntro + 520);
+    return () => { window.clearTimeout(leaveTimer); window.clearTimeout(readyTimer); };
+  }, [isInitialLoading, bootReady]);
+
+  if (!bootReady) return <StartupLoader theme={theme} leaving={bootLeaving} />;
+
   const guard = (el, admin) => <RequireAuth admin={admin}>{el}</RequireAuth>;
   const lp = pathname === '/' && products.length > 0 && !loadError;
   const top = pathname === '/' ? 150 : 20;
 
   return (
     <>
+      <SceneBackdrop isLanding={lp} />
       <Header />
       <main className={lp ? 'lpage' : 'w'}>
         {loadError ? <div className="box" style={{ marginTop: top }}>{loadError}</div>

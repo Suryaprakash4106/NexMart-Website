@@ -13,7 +13,7 @@ export default function AddressesPage() {
   const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
 
   const add = async () => { try { const r = await api('/users/addresses', 'POST', f); setUser({ ...user, addresses: r.addresses }); setF(blank); toast('Address saved'); } catch (e) { toast(e.message); } };
-  const del = async (id) => { try { const r = await api('/users/addresses/' + id, 'DELETE'); setUser({ ...user, addresses: r.addresses }); } catch (e) { toast(e.message); } };
+  const del = async (id) => { try { const r = await api('/users/addresses/' + id, 'DELETE'); setUser({ ...user, addresses: r.addresses }); toast('Address removed', 'success'); } catch (e) { toast(e.message); } };
   const list = user.addresses || [];
   return (
     <div className="narrow">

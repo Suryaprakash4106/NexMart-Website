@@ -19,7 +19,7 @@ export default function Reviews({ product }) {
     try {
       await api('/products/' + product.id + '/reviews', 'POST', { rating, title, comment });
       setRating(0); setTitle(''); setComment('');
-      toast('Thanks for your review');
+      toast('Thanks for your review', 'success');
       load(); loadProducts();
     } catch (e) { toast(e.message); }
   };

@@ -33,7 +33,11 @@ export default function CheckoutPage() {
     try { const d = await api('/coupons/check', 'POST', { code, subtotal }); setDisc(d.discount); toast('Coupon applied'); }
     catch (e) { setDisc(0); toast(e.message); }
   };
-  const finish = async (order) => { clearCart(); setDone(order); };
+  const finish = async (order) => {
+    clearCart();
+    setDone(order);
+    toast(`Order #${order.orderId} placed successfully`, 'success');
+  };
 
   const place = async () => {
     setBusy(true);
@@ -45,7 +49,7 @@ export default function CheckoutPage() {
       await loadRazorpay();
       new window.Razorpay({
         key: d.key, amount: d.amount, currency: 'INR', order_id: d.rzpOrderId, name: 'NexMart', description: 'Order ' + d.orderId,
-        prefill: { name: a.name, email: user.email, contact: a.phone }, theme: { color: '#5c1a1b' },
+        prefill: { name: a.name, email: user.email, contact: a.phone }, theme: { color: '#111111' },
         handler: async (r) => { try { const v = await api('/payments/verify', 'POST', { orderId: d.orderId, ...r }); finish(v.order); } catch (e) { toast(e.message); } },
         modal: { ondismiss: () => { api('/payments/cancel', 'POST', { orderId: d.orderId }).catch(() => {}); setBusy(false); toast('Payment cancelled'); } },
       }).open();

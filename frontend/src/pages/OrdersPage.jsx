@@ -9,13 +9,13 @@ const STEPS = ['Placed', 'Processing', 'Shipped', 'Delivered'];
 export default function OrdersPage() {
   const [orders, setOrders] = useState(null);
   const [err, setErr] = useState('');
-  const { toast, loadProducts } = useShop();
+  const { toast, loadProducts, askConfirm } = useShop();
   const load = () => api('/orders').then((d) => setOrders(d.orders)).catch((e) => setErr(e.message));
   useEffect(() => { load(); }, []);
 
   const cancel = async (id) => {
-    if (!confirm('Cancel this order?')) return;
-    try { await api('/orders/' + id + '/cancel', 'POST'); await loadProducts(); toast('Order cancelled'); load(); } catch (e) { toast(e.message); }
+    if (!await askConfirm({ title: 'Cancel this order?', message: `Order #${id} will be cancelled. This cannot be undone.`, confirmLabel: 'Cancel order', danger: true })) return;
+    try { await api('/orders/' + id + '/cancel', 'POST'); await loadProducts(); toast('Order cancelled', 'success'); load(); } catch (e) { toast(e.message); }
   };
   return (
     <div className="narrow">

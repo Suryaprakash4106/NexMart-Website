@@ -280,7 +280,7 @@ function StockCell({ p, onSave }) {
 }
 
 function Products() {
-  const { products, loadProducts, toast } = useShop();
+  const { products, loadProducts, toast, askConfirm } = useShop();
   const [f, setF] = useState({ search: '', category: '', stock: '' });
   const [page, setPage] = useState(1);
   const [form, setForm] = useState(null); // null = closed, {} = new, product = edit
@@ -304,7 +304,7 @@ function Products() {
     try { await api(`/admin/products/${p.id}/stock`, 'PATCH', { stock: n }); await loadProducts(); toast('Stock updated'); } catch (e) { toast(e.message); }
   };
   const del = async (p) => {
-    if (!window.confirm(`Delete "${p.name}"?`)) return;
+    if (!await askConfirm({ title: 'Delete this product?', message: `“${p.name}” will be removed from the NexMart catalogue.`, confirmLabel: 'Delete product', danger: true })) return;
     try { await api('/admin/products/' + p.id, 'DELETE'); await loadProducts(); toast('Product deleted'); } catch (e) { toast(e.message); }
   };
 
@@ -346,12 +346,12 @@ function Products() {
 
 /* ---------------- reviews ---------------- */
 function Reviews() {
-  const { toast } = useShop();
+  const { toast, askConfirm } = useShop();
   const [f, setF] = useState({ search: '', rating: '' });
   const search = useDebounced(f.search);
   const { data, err, page, setPage, reload } = usePaged('/admin/reviews', { search, rating: f.rating }, 10);
   const del = async (r) => {
-    if (!window.confirm('Delete this review?')) return;
+    if (!await askConfirm({ title: 'Delete this review?', message: 'This review will be removed from the product page.', confirmLabel: 'Delete review', danger: true })) return;
     try { await api('/admin/reviews/' + r._id, 'DELETE'); toast('Review deleted'); reload(); } catch (e) { toast(e.message); }
   };
   return (
@@ -387,14 +387,14 @@ function Reviews() {
 
 /* ---------------- users and roles ---------------- */
 function Users() {
-  const { toast } = useShop();
+  const { toast, askConfirm } = useShop();
   const { user } = useAuth();
   const [search, setSearch] = useState('');
   const [role, setRole] = useState('');
   const q = useDebounced(search);
   const { data, err, page, setPage, setData } = usePaged('/admin/users', { search: q, role });
   const change = async (u, r) => {
-    if (!window.confirm(`Change ${u.name} to ${r}?`)) return;
+    if (!await askConfirm({ title: 'Update this user role?', message: `${u.name} will have the ${r} role in NexMart.`, confirmLabel: 'Update role' })) return;
     try {
       await api(`/admin/users/${u._id}/role`, 'PATCH', { role: r });
       setData((d) => ({ ...d, users: d.users.map((x) => (x._id === u._id ? { ...x, role: r } : x)) }));

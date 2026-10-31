@@ -7,7 +7,7 @@ import { CATS } from '../utils/format';
 // Top sheet menu: categories as a grid, sub-categories open as chips
 export default function CategoryDrawer({ open, onClose }) {
   const { user, setAuthOpen, logout } = useAuth();
-  const { products } = useShop();
+  const { products, toast } = useShop();
   const [openCat, setOpenCat] = useState('');
 
   const tree = useMemo(() => Object.keys(CATS).map((c) => {
@@ -57,7 +57,7 @@ export default function CategoryDrawer({ open, onClose }) {
               <Link className="dw-lnk" to="/account">My account</Link>
               <Link className="dw-lnk" to="/orders">My orders</Link>
               <Link className="dw-lnk" to="/wishlist">My wishlist</Link>
-              {user ? <button className="dw-lnk" onClick={() => { logout(); onClose(); }}>Sign out</button>
+              {user ? <button className="dw-lnk" onClick={() => { logout(); toast('You have signed out safely', 'info'); onClose(); }}>Sign out</button>
                 : <button className="dw-lnk" onClick={() => { onClose(); setAuthOpen(true); }}>Sign in</button>}
             </section>
           </div>

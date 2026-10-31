@@ -50,11 +50,11 @@ export default function AuthModal() {
     try {
       if (!reg) {
         const u = await authenticate('login', f);
-        toast('Welcome, ' + u.name.split(' ')[0]);
+        toast('Welcome back, ' + u.name.split(' ')[0], 'success');
       } else {
         const d = await sendOtp(f);
         setCode(empty()); setErr(''); setStep('otp'); setLeft(d.resendIn || 60);
-        toast('OTP sent to ' + f.email);
+        toast('Verification code sent to your email', 'info');
       }
     } catch (e) { toast(e.message); }
     setBusy(false);
@@ -65,9 +65,10 @@ export default function AuthModal() {
     setBusy(true); setErr('');
     try {
       const u = await verifyOtp(f.email, otp);
-      toast('Welcome, ' + u.name.split(' ')[0]);
+      toast('Welcome to NexMart, ' + u.name.split(' ')[0], 'success');
     } catch (e) {
       setErr(e.message); setBad(true); setCode(empty());
+      toast(e.message, 'error');
       setTimeout(() => setBad(false), 500);
       focusBox(0);
     }
@@ -79,8 +80,8 @@ export default function AuthModal() {
     setBusy(true); setErr('');
     try {
       const d = await resendOtp(f.email);
-      setCode(empty()); setLeft(d.resendIn || 60); toast('New code sent'); focusBox(0);
-    } catch (e) { setErr(e.message); }
+      setCode(empty()); setLeft(d.resendIn || 60); toast('A new verification code has been sent', 'info'); focusBox(0);
+    } catch (e) { setErr(e.message); toast(e.message, 'error'); }
     setBusy(false);
   };
 
