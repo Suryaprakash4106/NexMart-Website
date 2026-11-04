@@ -29,11 +29,6 @@ export default function App() {
   const bootStartedAt = useRef(performance.now());
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
   useEffect(() => {
-    if (bootReady && pathname === '/') document.documentElement.dataset.page = 'home';
-    else delete document.documentElement.dataset.page;
-    return () => { delete document.documentElement.dataset.page; };
-  }, [bootReady, pathname]);
-  useEffect(() => {
     if (isInitialLoading || bootReady) return undefined;
     const waitForIntro = Math.max(0, 1250 - (performance.now() - bootStartedAt.current));
     const leaveTimer = window.setTimeout(() => setBootLeaving(true), waitForIntro);
