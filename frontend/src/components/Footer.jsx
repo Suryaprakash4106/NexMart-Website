@@ -14,6 +14,7 @@ export default function Footer() {
           <div><h5>Policies</h5><a>Privacy policy</a><a>Terms of use</a><a>Cookie policy</a><a>Seller policy</a></div>
         </div>
         <div className="cp">© {new Date().getFullYear()} NexMart. All rights reserved. Designed and developed by Suryaprakash K.</div>
+        <div className="photo-credit">Product and category photos: <a href="https://pixabay.com/" target="_blank" rel="noreferrer">Pixabay</a>, <a href="https://dummyjson.com/" target="_blank" rel="noreferrer">DummyJSON</a> and <a href="https://unsplash.com/" target="_blank" rel="noreferrer">Unsplash</a>.</div>
       </div>
       <div className="fw" aria-hidden="true">NEXMART</div>
       </footer>

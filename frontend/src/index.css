@@ -1556,3 +1556,7 @@ input,select,textarea{accent-color:var(--ink)}
 :root:not([data-t=dark]) .cta:before,:root:not([data-t=dark]) .cta:after{border-color:#8e5c3030}
 :root:not([data-t=dark]) .cta .lbtn{background:#5b4632!important;color:#fff8e9!important;border-color:#5b4632!important;box-shadow:0 4px 0 #3d2d20,0 12px 25px #5b463226}
 :root:not([data-t=dark]) .cta .lbtn:hover{background:#c8792c!important;color:#fff!important;border-color:#c8792c!important}
+
+.photo-credit{padding:0 0 18px;text-align:left;font-size:11px;color:var(--mute)}
+.photo-credit a{display:inline;color:inherit;text-decoration:underline;text-underline-offset:2px}
+.photo-credit a:hover{color:var(--ink)}
