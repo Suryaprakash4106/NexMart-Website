@@ -20,7 +20,12 @@ module.exports = (app) => {
       f.$or = [{ name: rx }, { brand: rx }, { category: rx }];
     }
     const sorts = { 'price-asc': { price: 1 }, 'price-desc': { price: -1 }, rating: { rating: -1 }, default: { pid: 1 } };
-    const products = await Product.find(f).sort(sorts[sort] || sorts.default).lean();
+    // Catalog cards only need summary fields. Keep galleries and long-form specs
+    // for the single-product endpoint so the first page load transfers less data.
+    const products = await Product.find(f)
+      .select('-images -spin -features -specs')
+      .sort(sorts[sort] || sorts.default)
+      .lean();
     res.json({ products: products.map((p) => ({ ...p, id: p.pid })) });
   }));
 
