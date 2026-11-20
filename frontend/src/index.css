@@ -1153,6 +1153,52 @@ input,select,textarea{accent-color:var(--ink)}
 @media(max-width:600px){.nm-notice{top:auto;right:12px;bottom:calc(env(safe-area-inset-bottom,0px) + 16px);left:12px;width:auto;min-height:72px;grid-template-columns:38px minmax(0,1fr) 28px;gap:10px;padding:12px 12px 15px;border-left-width:2px;border-radius:11px}.nm-notice-icon{width:36px;height:36px}.nm-notice-copy>span{font-size:12px}.nm-confirm-backdrop{padding:16px}.nm-confirm{border-radius:14px}.nm-confirm-actions{display:grid;grid-template-columns:1fr 1fr}.nm-confirm-actions button{padding:0 9px}}
 @media(prefers-reduced-motion:reduce){.nm-notice,.nm-notice-close,.nm-confirm-backdrop,.nm-confirm,.nm-confirm-actions button{animation:none!important;transition:none!important}.nm-notice-timer{animation:none!important}}
 
+/* Mobile navigation drawer: keep every control inside the viewport and easy to tap. */
+.dw{
+  box-sizing:border-box;
+  width:100%;
+  max-height:100vh;
+  max-height:100dvh;
+  overflow-x:hidden;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  padding-bottom:calc(22px + env(safe-area-inset-bottom, 0px));
+}
+.dw .w{width:100%;max-width:1440px;padding-inline:clamp(16px,4vw,32px)}
+.dw-top{position:sticky;top:0;z-index:4;gap:14px;background:var(--card)}
+.dw-hi{display:block;flex:1 1 auto;min-width:0;max-width:calc(100% - 112px);font-size:clamp(22px,5vw,34px);line-height:1.08;overflow-wrap:anywhere}
+.dw-x{flex:none;min-width:74px;min-height:44px;padding:10px 14px;border-radius:8px}
+.dw-grid{min-width:0;grid-template-columns:minmax(0,1.9fr) minmax(230px,1fr)}
+.dw-grid section{min-width:0}
+.dw-catlist{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+.dw-catitem{min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:var(--card);box-shadow:0 5px 16px #0000000d;transition:border-color .2s,box-shadow .2s}
+.dw-catitem:has(.dw-cat.on){grid-column:1/-1;border-color:var(--action);box-shadow:0 10px 24px #00000014}
+.dw-cat{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-width:0;min-height:58px;padding:14px 16px;border:0;border-radius:0;background:transparent;font-size:13px;line-height:1.3;overflow-wrap:anywhere}
+.dw-cat>span{flex:none;display:grid;width:24px;height:24px;place-items:center;border:1px solid var(--line);border-radius:50%;font-size:16px;line-height:1}
+.dw-cat.on{background:var(--action);color:var(--action-ink)}
+.dw-cat.on>span{border-color:color-mix(in srgb,var(--action-ink) 45%,transparent)}
+.dw-subs{margin:0;padding:12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;background:var(--soft)}
+.dw .dw-subs a{box-sizing:border-box;justify-content:space-between;align-items:center;min-width:0;min-height:44px;padding:10px 12px;border-radius:8px;line-height:1.25;overflow-wrap:anywhere}
+.dw .dw-subs a:first-child{grid-column:1/-1;background:var(--card);font-weight:700}
+.dw .dw-subs a span{flex:none}
+.dw .dw-lnk{min-height:48px;padding:13px 14px;border:1px solid var(--line);border-radius:9px;background:var(--card);box-shadow:0 4px 12px #0000000a}
+.dw .dw-lnk+.dw-lnk{margin-top:8px}
+.dw .dw-lnk:hover{background:var(--soft);text-decoration:none}
+@media(max-width:960px){
+  .dw-grid{grid-template-columns:minmax(0,1fr);gap:24px;padding-top:18px}
+  .dw-grid section+section{padding-top:18px;border-top:1px solid var(--line)}
+}
+@media(max-width:520px){
+  .dw .w{padding-inline:16px}
+  .dw-top{padding:calc(14px + env(safe-area-inset-top,0px)) 0 14px}
+  .dw-grid{padding-top:16px}
+  .dw-catlist{grid-template-columns:minmax(0,1fr);gap:9px}
+  .dw-catitem:has(.dw-cat.on){grid-column:auto}
+  .dw .dw-subs{grid-template-columns:minmax(0,1fr);gap:7px;padding:10px}
+  .dw .dw-subs a:first-child{grid-column:auto}
+  .dw-hi{max-width:calc(100% - 96px);font-size:clamp(20px,6vw,29px)}
+}
+
 /* Warm editorial light theme. Dark mode keeps the original monochrome layout. */
 :root:not([data-t=dark]){
   --bg:#f5f0e6;--card:#fffdf8;--soft:#ece5d8;--line:#ddd4c4;

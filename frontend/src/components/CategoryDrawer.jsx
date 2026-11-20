@@ -22,7 +22,9 @@ export default function CategoryDrawer({ open, onClose }) {
     return () => window.removeEventListener('keydown', esc);
   }, [onClose]);
 
-  const cur = tree.find((c) => c.key === openCat);
+  useEffect(() => {
+    if (!open) setOpenCat('');
+  }, [open]);
 
   return (
     <>
@@ -38,25 +40,31 @@ export default function CategoryDrawer({ open, onClose }) {
               <h4>Browse</h4>
               <div className="dw-catlist">
                 {tree.map((c) => (
-                  <button key={c.key} className={'dw-cat' + (openCat === c.key ? ' on' : '')} onClick={() => setOpenCat(openCat === c.key ? '' : c.key)}>{CATS[c.key]}</button>
+                  <div className="dw-catitem" key={c.key}>
+                    <button
+                      className={'dw-cat' + (openCat === c.key ? ' on' : '')}
+                      aria-expanded={openCat === c.key}
+                      onClick={() => setOpenCat(openCat === c.key ? '' : c.key)}
+                    >{CATS[c.key]}<span aria-hidden="true">{openCat === c.key ? '−' : '+'}</span></button>
+                    {openCat === c.key && (
+                      <div className="dw-subs">
+                        <Link onClick={onClose} to={'/c/' + c.key}>All in {CATS[c.key]}</Link>
+                        {c.subs.map(([s, n]) => <Link onClick={onClose} key={s} to={'/c/' + c.key + '?sub=' + encodeURIComponent(s)}>{s}<span>{n}</span></Link>)}
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
-              {cur && (
-                <div className="dw-subs">
-                  <Link to={'/c/' + cur.key}>All in {CATS[cur.key]}</Link>
-                  {cur.subs.map(([s, n]) => <Link key={s} to={'/c/' + cur.key + '?sub=' + encodeURIComponent(s)}>{s}<span>{n}</span></Link>)}
-                </div>
-              )}
             </section>
             <section>
               <h4>Popular</h4>
-              <Link className="dw-lnk" to="/">Home</Link>
-              <Link className="dw-lnk" to="/shop">All products</Link>
-              <Link className="dw-lnk" to="/deals">Hot deals</Link>
+              <Link className="dw-lnk" onClick={onClose} to="/">Home</Link>
+              <Link className="dw-lnk" onClick={onClose} to="/shop">All products</Link>
+              <Link className="dw-lnk" onClick={onClose} to="/deals">Hot deals</Link>
               <h4>My NexMart</h4>
-              <Link className="dw-lnk" to="/account">My account</Link>
-              <Link className="dw-lnk" to="/orders">My orders</Link>
-              <Link className="dw-lnk" to="/wishlist">My wishlist</Link>
+              <Link className="dw-lnk" onClick={onClose} to="/account">My account</Link>
+              <Link className="dw-lnk" onClick={onClose} to="/orders">My orders</Link>
+              <Link className="dw-lnk" onClick={onClose} to="/wishlist">My wishlist</Link>
               {user ? <button className="dw-lnk" onClick={() => { logout(); toast('You have signed out safely', 'info'); onClose(); }}>Sign out</button>
                 : <button className="dw-lnk" onClick={() => { onClose(); setAuthOpen(true); }}>Sign in</button>}
             </section>

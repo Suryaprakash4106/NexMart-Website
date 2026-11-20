@@ -116,3 +116,68 @@ test('protected account routes open sign-in without changing the guest session',
   await expect(page.getByPlaceholder('Email')).toBeVisible();
   await expect(page.getByPlaceholder('Password (8+ characters)')).toBeVisible();
 });
+
+test('mobile drawer keeps category subcategories with the selected card and fits the viewport', async ({ page }) => {
+  test.skip((page.viewportSize()?.width ?? 1000) > 700, 'mobile drawer layout');
+  await openStore(page);
+  await page.getByRole('button', { name: 'Open menu' }).click();
+
+  const drawer = page.locator('.dw');
+  await expect(drawer).toBeVisible();
+  const category = drawer.locator('.dw-catitem').filter({ has: page.getByRole('button', { name: /Electronics/ }) });
+  await category.getByRole('button', { name: /Electronics/ }).click();
+  await expect(category.locator('.dw-subs')).toBeVisible();
+  await expect(category.locator('.dw-subs')).toContainText('Headphones');
+  await expect(drawer.locator('.dw-catlist > .dw-catitem').first().locator('.dw-subs')).toBeVisible();
+
+  const dimensions = await drawer.evaluate((element) => ({
+    clientWidth: element.clientWidth,
+    scrollWidth: element.scrollWidth,
+    closeRight: element.querySelector('.dw-x')?.getBoundingClientRect().right ?? 0,
+  }));
+  expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth);
+  expect(dimensions.closeRight).toBeLessThanOrEqual(page.viewportSize()!.width);
+  await expect(drawer.getByRole('heading', { name: 'Popular' })).toBeVisible();
+});
+
+test('mobile drawer navigation links close the menu including same-route links', async ({ page }) => {
+  test.skip((page.viewportSize()?.width ?? 1000) > 700, 'mobile drawer navigation');
+  await openStore(page);
+  await page.goto('/shop');
+  await page.getByRole('button', { name: 'Open menu' }).click();
+
+  const drawer = page.locator('.dw');
+  await drawer.getByRole('link', { name: 'All products' }).click();
+  await expect(page).toHaveURL(/\/shop$/);
+  await expect(drawer).not.toHaveClass(/\bon\b/);
+
+  await page.getByRole('button', { name: 'Open menu' }).click();
+  await drawer.getByRole('link', { name: 'Home', exact: true }).click();
+  await expect(page).toHaveURL('/');
+  await expect(drawer).not.toHaveClass(/\bon\b/);
+
+  await page.goto('/shop');
+  await page.getByRole('button', { name: 'Open menu' }).click();
+  await drawer.getByRole('link', { name: 'Hot deals' }).click();
+  await expect(page).toHaveURL(/\/deals$/);
+  await expect(drawer).not.toHaveClass(/\bon\b/);
+
+  await page.getByRole('button', { name: 'Open menu' }).click();
+  await drawer.getByRole('link', { name: 'My wishlist' }).click();
+  await expect(page).toHaveURL(/\/wishlist$/);
+  await expect(drawer).not.toHaveClass(/\bon\b/);
+
+  for (const linkName of ['My account', 'My orders']) {
+    await page.getByRole('button', { name: 'Open menu' }).click();
+    await drawer.getByRole('link', { name: linkName }).click();
+    await expect(drawer).not.toHaveClass(/\bon\b/);
+    await expect(page.getByRole('heading', { name: 'Sign in' })).toBeVisible();
+    await page.locator('.ov.on').click({ position: { x: 5, y: 5 } });
+    await expect(page.locator('.ov')).not.toHaveClass(/\bon\b/);
+  }
+
+  await page.getByRole('button', { name: 'Open menu' }).click();
+  await drawer.getByRole('button', { name: 'Sign in' }).click();
+  await expect(drawer).not.toHaveClass(/\bon\b/);
+  await expect(page.getByRole('heading', { name: 'Sign in' })).toBeVisible();
+});
