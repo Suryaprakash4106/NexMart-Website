@@ -31,7 +31,7 @@ export default function AccountPage() {
         <Tile icon={<Heart size={40} />} title="My wishlist" text="Items you saved for later" to="/wishlist" />
         {STAFF[user.role] && <Tile icon={<Dash />} title="Admin dashboard" text={STAFF[user.role]} to="/admin" />}
       </div>
-      <button className="btn ln" style={{ marginTop: 20 }} onClick={() => { logout(); toast('You have signed out safely', 'info'); nav('/'); }}>Sign out</button>
+      <button className="btn ln account-signout" style={{ marginTop: 20 }} onClick={() => { logout(); toast('You have signed out safely', 'info'); nav('/'); }}>Sign out</button>
     </div>
   );
 }

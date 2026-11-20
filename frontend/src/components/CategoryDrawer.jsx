@@ -91,7 +91,7 @@ export default function CategoryDrawer({ open, onClose }) {
               <Link className="dw-lnk" onClick={onClose} to="/account">My account</Link>
               <Link className="dw-lnk" onClick={onClose} to="/orders">My orders</Link>
               <Link className="dw-lnk" onClick={onClose} to="/wishlist">My wishlist</Link>
-              {user ? <button className="dw-lnk" onClick={() => { logout(); toast('You have signed out safely', 'info'); onClose(); }}>Sign out</button>
+              {user ? <button className="dw-lnk dw-signout" onClick={() => { logout(); toast('You have signed out safely', 'info'); onClose(); }}>Sign out</button>
                 : <button className="dw-lnk" onClick={() => { onClose(); setAuthOpen(true); }}>Sign in</button>}
             </section>
           </div>

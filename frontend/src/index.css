@@ -1628,3 +1628,33 @@ input,select,textarea{accent-color:var(--ink)}
 .photo-credit{padding:0 0 18px;text-align:left;font-size:11px;color:var(--mute)}
 .photo-credit a{display:inline;color:inherit;text-decoration:underline;text-underline-offset:2px}
 .photo-credit a:hover{color:var(--ink)}
+
+/* Mobile fashion hero: keep the original photo, give it a clear photo-first layout. */
+@media(max-width:700px){
+  .lh.lh-fashion{height:780px;height:min(820px,calc(100svh - var(--ann) - var(--hh)));min-height:700px;max-height:820px;display:block;background:#17130f;text-align:left}
+  .lh.lh-fashion .ls.on{opacity:1}
+  .lh.lh-fashion .ls.on .lsi{background-position:center 30%;transform-origin:center 35%}
+  .lh.lh-fashion .light-hero-gallery{display:none}
+  .lh.lh-fashion .lov{background:linear-gradient(180deg,#0003 0%,#00000008 32%,#100d0be0 61%,#100d0bf5 100%)}
+  .lh.lh-fashion .lcn{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding:0 16px 54px;pointer-events:none}
+  .lh.lh-fashion .lcopy{width:100%;max-width:520px;gap:11px;padding:20px 19px 22px;border:1px solid #f5e4c44a;border-radius:16px;background:linear-gradient(145deg,#171411ed,#2a2119ed);box-shadow:0 18px 45px #0005;backdrop-filter:blur(10px)}
+  .lh.lh-fashion .lbrand{font-size:9px;letter-spacing:.15em}
+  .lh.lh-fashion .lpre{font-size:clamp(28px,8vw,38px);line-height:1.02}
+  .lh.lh-fashion .lcn .lwm{font-size:clamp(30px,9vw,46px)!important;line-height:.94}
+  .lh.lh-fashion .lpp{max-width:34ch;font-size:14px;line-height:1.5}
+  .lh.lh-fashion .lbtn{min-height:48px;padding:13px 20px;border-radius:9px}
+  .lh.lh-fashion .ldots{left:auto;right:20px;bottom:20px;transform:none}
+  .lh.lh-fashion .lsc{display:none}
+  :root:not([data-t=dark]) .lh.lh-fashion{background:#f2e8da}
+  :root:not([data-t=dark]) .lh.lh-fashion .lov{background:linear-gradient(180deg,#17130f20 0%,#17130f05 34%,#f2e8da45 55%,#f2e8da 76%)}
+  :root:not([data-t=dark]) .lh.lh-fashion .lcopy{border-color:#c8792c55;background:linear-gradient(145deg,#fffaf2f2,#f5e8d7f2);box-shadow:0 18px 45px #5b463226}
+  :root:not([data-t=dark]) .lh.lh-fashion .lbrand{color:#a85f1e}
+  :root:not([data-t=dark]) .lh.lh-fashion .lpre,:root:not([data-t=dark]) .lh.lh-fashion .lcn .lwm{color:#5b4632}
+  :root:not([data-t=dark]) .lh.lh-fashion .lpp{color:#665442}
+  :root:not([data-t=dark]) .lh.lh-fashion .lbtn{background:#5b4632;color:#fff8e9;border-color:#5b4632;box-shadow:0 4px 0 #3b2c20}
+}
+
+/* Sign out gets a distinct action color; other drawer/account actions retain their theme. */
+.dw .dw-signout,.account-signout{border-color:#c8792c!important;background:#c8792c!important;color:#fff8e9!important}
+.dw .dw-signout{border-radius:9px;font-weight:700}
+.dw .dw-signout:hover,.account-signout:hover{border-color:#a85f1e!important;background:#a85f1e!important;color:#fff!important}

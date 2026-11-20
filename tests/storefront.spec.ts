@@ -49,6 +49,31 @@ test('home page renders the store and navigates into a category', async ({ page 
   await expect(page.getByText('NexSound Studio Headphones')).toBeVisible();
 });
 
+test('mobile fashion hero keeps the photo visible above the copy card', async ({ page }) => {
+  await page.setViewportSize({ width: 393, height: 852 });
+  await openStore(page);
+  await page.getByRole('button', { name: 'Show slide 2' }).click();
+  const hero = page.locator('.lh.lh-fashion');
+  await expect(hero).toBeVisible();
+  const layout = await hero.evaluate((element) => {
+    const photo = element.querySelector('.ls.on .lsi')!;
+    const card = element.querySelector('.lcopy')!;
+    const heroBounds = element.getBoundingClientRect();
+    const cardBounds = card.getBoundingClientRect();
+    return {
+      heroHeight: heroBounds.height,
+      cardTop: cardBounds.top - heroBounds.top,
+      cardBottom: cardBounds.bottom - heroBounds.top,
+      photo: getComputedStyle(photo).backgroundImage,
+      overflow: document.documentElement.scrollWidth - window.innerWidth,
+    };
+  });
+  expect(layout.photo).toContain('images.unsplash.com/photo-1441986300917-64674bd600d8');
+  expect(layout.cardTop).toBeGreaterThan(layout.heroHeight * 0.4);
+  expect(layout.cardBottom).toBeLessThanOrEqual(layout.heroHeight);
+  expect(layout.overflow).toBeLessThanOrEqual(0);
+});
+
 test('search returns matching products and category filters stay usable', async ({ page }) => {
   await openStore(page);
   await page.getByRole('button', { name: 'Search' }).click();
