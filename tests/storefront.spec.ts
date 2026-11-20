@@ -35,7 +35,7 @@ async function openStore(page: Page) {
     contentType: 'application/json',
     body: JSON.stringify({ reviews: [], hist: {}, count: 0, avg: 0 }),
   }));
-  await page.goto('/');
+  await page.goto('/', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('link', { name: 'NEXMART' })).toBeVisible();
 }
 
@@ -180,4 +180,99 @@ test('mobile drawer navigation links close the menu including same-route links',
   await drawer.getByRole('button', { name: 'Sign in' }).click();
   await expect(drawer).not.toHaveClass(/\bon\b/);
   await expect(page.getByRole('heading', { name: 'Sign in' })).toBeVisible();
+});
+
+test('mobile public routes and home hero fit narrow phone widths without clipping header actions', async ({ page }) => {
+  await openStore(page);
+  for (const width of [360, 320]) {
+    await page.setViewportSize({ width, height: 800 });
+    for (const path of ['/', '/shop', '/deals', '/c/Electronics', '/search/headphones', '/p/910001', '/cart', '/wishlist']) {
+      await page.evaluate((nextPath) => {
+        window.history.pushState({}, '', nextPath);
+        window.dispatchEvent(new PopStateEvent('popstate'));
+      }, path);
+      await expect(page).toHaveURL(new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$'));
+      await expect(page.locator('.hrow')).toBeVisible();
+      const layout = await page.evaluate(() => {
+        const bounds = (selector: string) => {
+          const element = document.querySelector(selector);
+          if (!element) return null;
+          const { left, right } = element.getBoundingClientRect();
+          return { left, right };
+        };
+        return {
+          viewport: window.innerWidth,
+          document: document.documentElement.scrollWidth,
+          header: bounds('.hrow'),
+          brand: bounds('.wm'),
+          actions: bounds('.hr'),
+          heroCopy: bounds('.lcopy'),
+          heroButton: bounds('.lcopy .lbtn'),
+        };
+      });
+      expect(layout.document, `${path} at ${width}px has horizontal overflow`).toBeLessThanOrEqual(width);
+      for (const [name, rect] of Object.entries({ header: layout.header, brand: layout.brand, actions: layout.actions, heroCopy: layout.heroCopy, heroButton: layout.heroButton })) {
+        if (!rect) continue;
+        expect(rect.left, `${name} on ${path} extends left`).toBeGreaterThanOrEqual(0);
+        expect(rect.right, `${name} on ${path} extends right`).toBeLessThanOrEqual(width);
+      }
+    }
+  }
+  await page.evaluate(() => {
+    window.history.pushState({}, '', '/');
+    window.dispatchEvent(new PopStateEvent('popstate'));
+  });
+  await page.getByRole('button', { name: 'Switch light or dark mode' }).click();
+  const darkHeader = await page.locator('.hrow').evaluate((element) => ({
+    scrollWidth: element.scrollWidth,
+    clientWidth: element.clientWidth,
+  }));
+  expect(darkHeader.scrollWidth).toBeLessThanOrEqual(darkHeader.clientWidth);
+});
+
+test('long signed-in name stays on one line and scales down to fit the mobile drawer', async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem('nm_user', JSON.stringify({ name: 'SURYAPRAKASH' }));
+  });
+  await page.setViewportSize({ width: 320, height: 800 });
+  await openStore(page);
+  await page.getByRole('button', { name: 'Open menu' }).click();
+  const greeting = page.locator('.dw-hi');
+  await expect(greeting).toHaveText('Hi, SURYAPRAKASH');
+  const textFit = await greeting.evaluate((element) => ({
+    fontSize: parseFloat(getComputedStyle(element).fontSize),
+    scrollWidth: element.scrollWidth,
+    clientWidth: element.clientWidth,
+    whiteSpace: getComputedStyle(element).whiteSpace,
+  }));
+  expect(textFit.fontSize).toBeLessThan(29);
+  expect(textFit.scrollWidth).toBeLessThanOrEqual(textFit.clientWidth);
+  expect(textFit.whiteSpace).toBe('nowrap');
+});
+
+test('signed-in account, checkout and admin pages stay within a narrow mobile viewport', async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem('nm_user', JSON.stringify({
+      name: 'Suryaprakash', email: 'surya@example.test', phone: '9876543210', role: 'admin', addresses: [],
+    }));
+    localStorage.setItem('nm_cart', JSON.stringify([{ id: 910001, qty: 1 }]));
+  });
+  await openStore(page);
+  await page.setViewportSize({ width: 360, height: 800 });
+  await page.route('**/api/admin/**', (route) => route.abort());
+  await page.route('**/api/orders', (route) => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ orders: [] }) }));
+
+  for (const path of ['/account', '/account/security', '/account/addresses', '/account/payments', '/orders', '/checkout', '/admin']) {
+    await page.evaluate((nextPath) => {
+      window.history.pushState({}, '', nextPath);
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    }, path);
+    await expect(page).toHaveURL(new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$'));
+    await expect(page.locator('.hrow')).toBeVisible();
+    const width = await page.evaluate(() => ({
+      viewport: window.innerWidth,
+      document: document.documentElement.scrollWidth,
+    }));
+    expect(width.document, `${path} overflows at ${width.viewport}px`).toBeLessThanOrEqual(width.viewport);
+  }
 });

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useShop } from '../context/ShopContext';
@@ -9,6 +9,9 @@ export default function CategoryDrawer({ open, onClose }) {
   const { user, setAuthOpen, logout } = useAuth();
   const { products, toast } = useShop();
   const [openCat, setOpenCat] = useState('');
+  const greetingRef = useRef(null);
+  const firstName = user?.name?.trim().split(/\s+/)[0];
+  const greeting = user ? `Hi, ${firstName}` : 'Welcome, sign in';
 
   const tree = useMemo(() => Object.keys(CATS).map((c) => {
     const subs = {};
@@ -26,13 +29,36 @@ export default function CategoryDrawer({ open, onClose }) {
     if (!open) setOpenCat('');
   }, [open]);
 
+  useEffect(() => {
+    const el = greetingRef.current;
+    const header = el?.parentElement;
+    const close = header?.querySelector('.dw-x');
+    if (!el || !header) return undefined;
+    const fit = () => {
+      const available = Math.max(90, header.clientWidth - (close?.getBoundingClientRect().width || 74) - 14);
+      const style = window.getComputedStyle(el);
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+      ctx.font = `${style.fontWeight} 100px ${style.fontFamily}`;
+      const textWidthAt100 = ctx.measureText(greeting).width;
+      const fitted = Math.min(34, available * 94 / Math.max(textWidthAt100, 1));
+      el.style.fontSize = `${Math.max(10, fitted)}px`;
+    };
+    fit();
+    const observer = new ResizeObserver(fit);
+    observer.observe(header);
+    window.addEventListener('resize', fit);
+    return () => { observer.disconnect(); window.removeEventListener('resize', fit); };
+  }, [greeting, open]);
+
   return (
     <>
       <div className={'dw-ov' + (open ? ' on' : '')} onClick={onClose} />
       <aside className={'dw' + (open ? ' on' : '')} aria-hidden={!open}>
         <div className="w">
           <div className="dw-top">
-            <span className="dw-hi" onClick={() => { if (!user) { onClose(); setAuthOpen(true); } }} style={{ cursor: user ? 'default' : 'pointer' }}>{user ? 'Hi, ' + user.name.split(' ')[0] : 'Welcome, sign in'}</span>
+            <span ref={greetingRef} className="dw-hi" onClick={() => { if (!user) { onClose(); setAuthOpen(true); } }} style={{ cursor: user ? 'default' : 'pointer' }}>{greeting}</span>
             <button className="dw-x" onClick={onClose} aria-label="Close menu">Close</button>
           </div>
           <div className="dw-grid">

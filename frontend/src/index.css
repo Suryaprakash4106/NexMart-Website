@@ -1199,6 +1199,28 @@ input,select,textarea{accent-color:var(--ink)}
   .dw-hi{max-width:calc(100% - 96px);font-size:clamp(20px,6vw,29px)}
 }
 
+/* Fit the storefront chrome on narrow phones without hiding its actions. */
+@media(max-width:520px){
+  .hrow.w{grid-template-columns:minmax(0,1fr) auto;gap:4px;padding-inline:10px}
+  .hl{min-width:0;gap:6px}
+  .hmenu{flex:none;width:28px;height:34px;padding:3px}
+  .hmenu svg{width:22px;height:22px}
+  .wm{min-width:0;font-size:clamp(15px,4.45vw,18px);letter-spacing:.035em;white-space:nowrap}
+  .hr{flex:none;gap:1px}
+  .ib{flex:none;width:28px;height:34px;padding:0}
+  .ib svg{width:19px;height:19px}
+  .ib b{top:0;right:-1px;min-width:14px;font-size:9px}
+}
+@media(max-width:360px){
+  .hrow.w{padding-inline:7px;gap:2px}
+  .hl{gap:4px}
+  .hmenu{width:26px}
+  .wm{font-size:15px;letter-spacing:0}
+  .ib{width:26px}
+  .ib svg{width:18px;height:18px}
+}
+.dw-hi{white-space:nowrap;overflow-wrap:normal;word-break:normal;overflow:hidden;text-overflow:clip}
+
 /* Warm editorial light theme. Dark mode keeps the original monochrome layout. */
 :root:not([data-t=dark]){
   --bg:#f5f0e6;--card:#fffdf8;--soft:#ece5d8;--line:#ddd4c4;
