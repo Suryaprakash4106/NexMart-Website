@@ -49,28 +49,29 @@ test('home page renders the store and navigates into a category', async ({ page 
   await expect(page.getByText('NexSound Studio Headphones')).toBeVisible();
 });
 
-test('mobile fashion hero keeps the photo visible above the copy card', async ({ page }) => {
+test('dark mobile promo banners match the rounded light-mode frame layout', async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem('nm_theme', 'dark'));
   await page.setViewportSize({ width: 393, height: 852 });
   await openStore(page);
-  await page.getByRole('button', { name: 'Show slide 2' }).click();
-  const hero = page.locator('.lh.lh-fashion');
-  await expect(hero).toBeVisible();
-  const layout = await hero.evaluate((element) => {
-    const photo = element.querySelector('.ls.on .lsi')!;
-    const card = element.querySelector('.lcopy')!;
-    const heroBounds = element.getBoundingClientRect();
+  const banner = page.locator('.pb').first();
+  await expect(banner).toBeVisible();
+  const layout = await banner.evaluate((element) => {
+    const card = element.querySelector('.pbt > div')!;
+    const frameBounds = element.getBoundingClientRect();
     const cardBounds = card.getBoundingClientRect();
     return {
-      heroHeight: heroBounds.height,
-      cardTop: cardBounds.top - heroBounds.top,
-      cardBottom: cardBounds.bottom - heroBounds.top,
-      photo: getComputedStyle(photo).backgroundImage,
+      width: frameBounds.width,
+      height: frameBounds.height,
+      radius: getComputedStyle(element).borderRadius,
+      cardCenter: (cardBounds.top + cardBounds.bottom) / 2,
+      frameCenter: (frameBounds.top + frameBounds.bottom) / 2,
       overflow: document.documentElement.scrollWidth - window.innerWidth,
     };
   });
-  expect(layout.photo).toContain('images.unsplash.com/photo-1441986300917-64674bd600d8');
-  expect(layout.cardTop).toBeGreaterThan(layout.heroHeight * 0.4);
-  expect(layout.cardBottom).toBeLessThanOrEqual(layout.heroHeight);
+  expect(layout.width).toBeLessThan(393);
+  expect(layout.height).toBe(500);
+  expect(layout.radius).toBe('10px');
+  expect(Math.abs(layout.cardCenter - layout.frameCenter)).toBeLessThan(40);
   expect(layout.overflow).toBeLessThanOrEqual(0);
 });
 

@@ -118,7 +118,7 @@ export default function LandingPage() {
 
   return (
     <>
-      <section className={'lh lh-mobile-showcase' + (i === 1 ? ' lh-fashion' : '')} ref={hero}>
+      <section className="lh" ref={hero}>
         {SLIDES.map((x, k) => (
           <div key={k} className={'ls' + (k === i ? ' on' : '')}>
             <div className="lsi" style={{ backgroundImage: `url(${U(x[0])})` }} />
