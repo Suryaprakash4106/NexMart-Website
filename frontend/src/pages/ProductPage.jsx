@@ -39,7 +39,7 @@ export default function ProductPage() {
     <>
       <div className="crumb"><Link to="/">Home</Link> › <Link to={'/c/' + p.category}>{CATS[p.category] || p.category}</Link> › <Link to={'/c/' + p.category + '?sub=' + encodeURIComponent(p.subcategory || '')}>{p.subcategory || p.category}</Link> › {p.name}</div>
       <div className="pdp">
-        <div className="pdp-gal">
+        <div className={'pdp-gal' + (imgs.length > 1 ? ' has-thumbs' : '')}>
           {imgs.length > 1 && (
             <div className="pdp-th">{imgs.map((m, k) => (
               <button key={m} className={k === idx ? 'on' : ''} onClick={() => setIdx(k)} aria-label={'Photo ' + (k + 1)}><img src={m} alt="" loading="lazy" onError={imgFallback} /></button>
