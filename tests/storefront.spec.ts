@@ -99,6 +99,14 @@ test('mobile product rows swipe horizontally and listing cards use a compact two
   }));
   expect(gridLayout.columns).toBe(2);
   expect(gridLayout.cardWidth).toBeLessThan(200);
+
+  await page.setViewportSize({ width: 720, height: 900 });
+  const widerMobileGrid = await grid.evaluate((element) => ({
+    columns: getComputedStyle(element).gridTemplateColumns.split(' ').length,
+    cardWidth: element.querySelector('.card')?.getBoundingClientRect().width ?? 0,
+  }));
+  expect(widerMobileGrid.columns).toBeGreaterThanOrEqual(4);
+  expect(widerMobileGrid.cardWidth).toBeLessThan(170);
 });
 
 test('search returns matching products and category filters stay usable', async ({ page }) => {
