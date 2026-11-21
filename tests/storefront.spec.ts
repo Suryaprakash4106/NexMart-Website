@@ -86,7 +86,8 @@ test('mobile product rows swipe horizontally and listing cards use a compact two
     cardWidth: element.querySelector('.card')?.getBoundingClientRect().width ?? 0,
   }));
   expect(rowBefore.scrollWidth).toBeGreaterThan(rowBefore.clientWidth);
-  expect(rowBefore.cardWidth).toBeLessThanOrEqual(170);
+  expect(rowBefore.cardWidth).toBeLessThanOrEqual(145);
+  expect(await page.evaluate(() => document.documentElement.scrollHeight > window.innerHeight)).toBeTruthy();
   await row.evaluate((element) => element.scrollBy({ left: 140, behavior: 'instant' }));
   await expect.poll(() => row.evaluate((element) => element.scrollLeft)).toBeGreaterThan(0);
 
