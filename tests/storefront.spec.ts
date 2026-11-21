@@ -75,6 +75,32 @@ test('dark mobile promo banners match the rounded light-mode frame layout', asyn
   expect(layout.overflow).toBeLessThanOrEqual(0);
 });
 
+test('mobile product rows swipe horizontally and listing cards use a compact two-column grid', async ({ page }) => {
+  await page.setViewportSize({ width: 393, height: 852 });
+  await openStore(page);
+  const row = page.locator('.row').nth(1);
+  await expect(row).toBeVisible();
+  const rowBefore = await row.evaluate((element) => ({
+    clientWidth: element.clientWidth,
+    scrollWidth: element.scrollWidth,
+    cardWidth: element.querySelector('.card')?.getBoundingClientRect().width ?? 0,
+  }));
+  expect(rowBefore.scrollWidth).toBeGreaterThan(rowBefore.clientWidth);
+  expect(rowBefore.cardWidth).toBeLessThanOrEqual(170);
+  await row.evaluate((element) => element.scrollBy({ left: 140, behavior: 'instant' }));
+  await expect.poll(() => row.evaluate((element) => element.scrollLeft)).toBeGreaterThan(0);
+
+  await page.goto('/c/Furniture');
+  const grid = page.locator('.grid');
+  await expect(grid).toBeVisible();
+  const gridLayout = await grid.evaluate((element) => ({
+    columns: getComputedStyle(element).gridTemplateColumns.split(' ').length,
+    cardWidth: element.querySelector('.card')?.getBoundingClientRect().width ?? 0,
+  }));
+  expect(gridLayout.columns).toBe(2);
+  expect(gridLayout.cardWidth).toBeLessThan(200);
+});
+
 test('search returns matching products and category filters stay usable', async ({ page }) => {
   await openStore(page);
   await page.getByRole('button', { name: 'Search' }).click();
